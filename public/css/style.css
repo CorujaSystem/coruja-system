@@ -1,0 +1,85 @@
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: #221e41;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: normal;
+}
+
+.container-top {
+    display: flex;
+    margin: 70px 100px 0 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-top {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 90px;
+}
+
+.subtext {
+    margin-top: 10px;
+    color: #919191;
+    font-size: 30px;
+}
+
+.btn-contribua {
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border-style: none;
+    background-color: #cf7dad;
+    color: white;
+    font-size: large;
+}
+
+.quem-somos {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    margin: 60px 0 0 80px;
+}
+
+.card1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #cf7dad;
+    border-radius: 12px;
+    width: 60%;
+}
+
+.imgCard1 {
+    border-radius: 12px 0 0 12px;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    margin: 0 20px 0 20px;
+    text-align: justify;
+}
+
+.titleCard {
+    font-weight: normal;
+}
+
+.card2 {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    margin-top: 40px;
+    background-color: #474787;
+    border-radius: 12px;
+    width: 60%;
+}
+
+.imgCard2 {
+    border-radius: 0 12px 12px 0;
+}
