@@ -19,6 +19,15 @@
     </head>
 
     <body>
+        <nav class="navbar">
+            <div class="navbar__items">
+                <img src="{{ asset('images/coruja-pequena.svg') }}" alt="">
+                <a class="navbar__items--link" href="">Galeria de fotos</a>
+                <a class="navbar__items--link" href="">Sobre nós</a>
+                <a class="navbar__items--link" href="">Doações</a>
+            </div>
+            <button class="btn-contato navbar__button"> Entrar em contato </button>
+        </nav>
         <div class="container-top">
             <div class="text-top">
                 Campanha </br> Dona Coruja
