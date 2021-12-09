@@ -46,17 +46,6 @@ body {
   cursor: pointer;
 }
 
-.text-top {
-  font-weight: bold;
-  color: #221E41;
-}
-
-.subtext {
-  margin-top: 10px;
-  color: #919191;
-  font-size: 30px;
-}
-
 .btn-contribua {
   width: 150px;
   height: 50px;
@@ -66,43 +55,4 @@ body {
   background-color: #cf7dad;
   color: white;
   font-size: large;
-}
-
-.card1 {
-  display: flex;
-  justify-content: space-between;
-  background-color: #cf7dad;
-  border-radius: 12px;
-  width: 60%;
-}
-
-.imgCard1 {
-  border-radius: 12px 0 0 12px;
-}
-
-.cardInfo {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-size: 16px;
-  margin: 0 20px 0 20px;
-  text-align: justify;
-}
-
-.titleCard {
-  font-weight: normal;
-}
-
-.card2 {
-  display: flex;
-  justify-content: space-between;
-  align-self: flex-end;
-  margin-top: 40px;
-  background-color: #474787;
-  border-radius: 12px;
-  width: 60%;
-}
-
-.imgCard2 {
-  border-radius: 0 12px 12px 0;
 }
