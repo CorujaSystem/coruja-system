@@ -14,13 +14,13 @@
 
 <div class="row">
     <h1>Quem somos</h1>
-    <div class="card mb-3 text-white" style="background-color: #cf7dad;">
+    <div class="card mb-3 text-white w-75 p-0" style="background-color: #cf7dad;">
         <div class="row g-0">
-            <div class="col-4">
-                <img class="w-100" src="https://i.imgur.com/uJ3zvwR.jpg" alt="entrega de kits">
+            <div class="col-6 ">
+                <img class="img-responsive" width="400" src="https://i.imgur.com/uJ3zvwR.jpg" alt="entrega de kits">
             </div>
-            <div class="col-8">
-                <div class="card-body">
+            <div class="col-6">
+                <div class="card-body ">
                     <h2 class="card-title">Nossa história</h2>
                     <p class="card-text">Surgimos em 2014 na cidade de Caicó - RN, com o objetivo de ajudar as crianças carentes de escolas públicas da região.</p>
                     <p class="card-text">Na primeira edição, conseguimos arrecadar o suficiente para doar 12 kits. Com a ajuda do público,
@@ -29,24 +29,24 @@
             </div>
         </div>
     </div>
+    <div class="d-flex justify-content-end">
+        <div class="card mb-3 text-white w-75 d-flex p-0  align-self-end" style="background-color: #474787">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card-body">
 
-    <div class="card mb-3 text-white" style="background-color: #474787">
-        <div class="row">
-            <div class="col-8">
-                <div class="card-body">
-
-                    <h2 class="card-title">O que fazemos</h2>
-                    <p class="card-text">A campanha Dona Coruja facilita o acesso de materiais escolares para crianças carentes.</p>
-                    <p class="card-text">Nosso objetivo é atender alunos de escolas públicas, de modo que possam iniciar o ano letivo com um material escolar decente.</p>
-                    <p class="card-text">Esperamos que assim eles se sintam mais estimulados em relação aos estudos e consigam contribuir para um futuro melhor.</p>
+                        <h2 class="card-title">O que fazemos</h2>
+                        <p class="card-text">A campanha Dona Coruja facilita o acesso de materiais escolares para crianças carentes.</p>
+                        <p class="card-text">Nosso objetivo é atender alunos de escolas públicas, de modo que possam iniciar o ano letivo com um material escolar decente.</p>
+                        <p class="card-text">Esperamos que assim eles se sintam mais estimulados em relação aos estudos e consigam contribuir para um futuro melhor.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-4">
-                <img class="img-responsive" src="https://i.imgur.com/wfuRtz5.png" alt="entrega de kits" width="100%">
+                <div class="col-6 ">
+                    <img class="img-responsive" src="https://i.imgur.com/wfuRtz5.png" alt="entrega de kits" width="100%">
+                </div>
             </div>
         </div>
     </div>
-
 </div>
 
 
