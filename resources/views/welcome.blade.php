@@ -9,7 +9,7 @@
         </button>
     </div>
 
-    <img class="col-6" src="https://i.imgur.com/AInPAE3.png" alt="coruja">
+    <img class="col-6" src="{{ asset('images/coruja-grande.png') }}" alt="coruja">
 </div>
 
 <div class="row">
@@ -17,7 +17,7 @@
     <div class="card mb-3 text-white w-75 p-0" style="background-color: #cf7dad;">
         <div class="row g-0">
             <div class="col-6 ">
-                <img class="img-responsive" width="400" src="https://i.imgur.com/uJ3zvwR.jpg" alt="entrega de kits">
+                <img class="img-responsive" width="400" src="{{ asset('images/foto-nossa-historia.jpg') }}" alt="entrega de kits">
             </div>
             <div class="col-6">
                 <div class="card-body ">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-6 ">
-                    <img class="img-responsive" src="https://i.imgur.com/wfuRtz5.png" alt="entrega de kits" width="100%">
+                    <img class="img-responsive" src="{{ asset('images/foto-oque-fazemos.png') }}" alt="entrega de kits" width="100%">
                 </div>
             </div>
         </div>
@@ -53,15 +53,15 @@
 <div class="row">
     <h2>Como funciona?</h2>
     <div class="d-flex align-items-center justify-content-between">
-        <livewire:info-card title='Doações' description='Com as doações, compramos os materiais escolares.' image_url='https://i.imgur.com/cXTpk46.png' bg_color='#e73042' />
+        <livewire:info-card title='Doações' description='Com as doações, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-doacoes.png') }}" bg_color='#e73042' />
 
-        <livewire:info-card title='Compra de materiais' description='Com as doações, compramos os materiais escolares.' image_url='https://i.imgur.com/6BycWdj.png' bg_color='#1e90ff' />
+        <livewire:info-card title='Compra de materiais' description='Com as doações, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-compra-materiais.png') }}" bg_color='#1e90ff' />
 
         <livewire:info-card title='Montagem dos kits' description='Montamos os kits: caderno,
 lápis, borracha, tesoura, lápis de
-colorir, tudo em uma pasta.' image_url='https://i.imgur.com/0fMFen8.png' bg_color='#A050C8' />
+colorir, tudo em uma pasta.' image_url="{{ asset('images/foto-card-montagem.png') }}" bg_color='#A050C8' />
         <livewire:info-card title='Entrega dos kits' description='Realizamos a entrega dos
-materiais para diversas famílias..' image_url='https://i.imgur.com/QkrMKmJ.png' bg_color='#77AD5C' />
+materiais para diversas famílias..' image_url="{{ asset('images/foto-card-entrega.png') }}" bg_color='#77AD5C' />
 
     </div>
 </div>
@@ -75,13 +75,13 @@ materiais para diversas famílias..' image_url='https://i.imgur.com/QkrMKmJ.png'
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://i.imgur.com/L3MIFEb.png" class="d-block w-50" alt="...">
+                <img src="{{ asset('images/coruja-grande.png') }}" class="d-block w-50" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://i.imgur.com/L3MIFEb.png" class="d-block w-50" alt="...">
+                <img src="{{ asset('images/coruja-grande.png') }}" class="d-block w-50" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://i.imgur.com/L3MIFEb.png" class="d-block w-50" alt="...">
+                <img src="{{ asset('images/coruja-grande.png') }}" class="d-block w-50" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
