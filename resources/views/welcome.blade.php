@@ -66,8 +66,9 @@ materiais para diversas famílias..' image_url="{{ asset('images/foto-card-entre
     </div>
 </div>
 
-<div class="align-self-center ">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<h2 class="mt-4">Conheça nossas edições</h2>
+<div class="d-flex justify-content-center mt-2 w-100">
+    <div id="carouselExampleIndicators" class="carousel slide w-75" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -75,13 +76,13 @@ materiais para diversas famílias..' image_url="{{ asset('images/foto-card-entre
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('images/coruja-grande.png') }}" class="d-block w-50" alt="...">
+                <img src="{{ asset('images/carousel-1.png') }}" class="d-block w-50" alt="entrega de kits">
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/coruja-grande.png') }}" class="d-block w-50" alt="...">
+                <img src="{{ asset('images/carousel-2.png') }}" class="d-block w-50" alt="entrega de kits">
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/coruja-grande.png') }}" class="d-block w-50" alt="...">
+                <img src="{{ asset('images/carousel-3.png') }}" class="d-block w-50" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -95,5 +96,17 @@ materiais para diversas famílias..' image_url="{{ asset('images/foto-card-entre
     </div>
 </div>
 
+<h2 class="mt-4">Como posso ajudar a campanha?</h2>
+<div class="d-flex align-items-center justify-content-around">
+    <livewire:info-card title='Doação em Dinheiro' description='Ajude pelas redes bancárias, transferência ou PIX.' image_url="{{ asset('images/card-donation.png') }}" bg_color='#e73042' />
+
+    <livewire:info-card title='Entrar em Contato' description='Converse conosco, tire suas dúvidas!' image_url="{{ asset('images/card-contato.png') }}" bg_color='#1e90ff' />
+
+    <livewire:info-card title='Compartilhe nas redes sociais' description='Faça a campanha atingir mais pessoas!' image_url="{{ asset('images/card-redes-sociais.png') }}" bg_color='#A050C8' />
+
+</div>
+<div class="d-flex justify-content-center">
+    <button class="btn-contribua mt-4">Quero ajudar</i></button>
+</div>
 
 @endsection
