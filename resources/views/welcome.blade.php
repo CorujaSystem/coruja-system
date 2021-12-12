@@ -1,38 +1,39 @@
 @extends ('layouts.app')
 
 @section('content')
-<div class="row text-top mt-5">
-    <div class="col-6 align-self-center">
-        <h3 class="display-1 fw-bold" style="color:#221E41"> Campanha </br> Dona Coruja</h3>
-        <div class="fs-4 text-muted font-we">Doação de material escolar para crianças carentes </div>
-        <button class="btn-contribua mt-4   ">Contribua <i class="fas fa-chevron-right"></i>
-        </button>
+<div class="d-flex flex-sm-column-reverse flex-lg-row text-top mt-5">
+    <div class="col-sm-8 col-lg-6 align-self-center ">
+        <h3 class="display-1 fw-bold text-sm-center text-lg-start" style="color:#221E41"> Campanha Dona Coruja</h3>
+        <div class="fs-4 text-muted font-we text-sm-center text-lg-start">Doação de material escolar para crianças carentes </div>
+        <div class="d-flex justify-content-sm-center justify-content-lg-start">
+            <button class="btn-contribua mt-4 align-self-center">Contribua <i class="fas fa-chevron-right"></i></button>
+        </div>
     </div>
 
-    <img class="col-6" src="{{ asset('images/coruja-grande.png') }}" alt="coruja">
+    <img class="col-6 align-self-center" src="{{ asset('images/coruja-grande.png') }}" alt="coruja">
 </div>
 
-<div class="row ">
+<div class="row mt-sm-4 mt-lg-0">
     <h1 style="color:#221E41">Quem somos</h1>
-    <div class="card mb-3 text-white w-75 p-0" style="background-color: #cf7dad;">
-        <div class="row g-0">
-            <div class="col-6 ">
-                <img class="img-responsive" width="400" src="{{ asset('images/foto-nossa-historia.jpg') }}" alt="entrega de kits">
-            </div>
-            <div class="col-6">
+    <div class="d-flex flex-column ">
+        <div class="card mb-3 text-white w-75 p-0 align-self-sm-center align-self-lg-start" style="background-color: #cf7dad;">
+            <div class="d-flex flex-lg-row flex-sm-column g-0">
+                <div class="col-lg-6 col-sm-12 ">
+                    <img class="img-fluid" width="100%" src="{{ asset('images/foto-nossa-historia.jpg') }}" alt="entrega de kits">
+                </div>
                 <div class="card-body ">
                     <h2 class="card-title">Nossa história</h2>
                     <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Surgimos em 2014 na cidade de Caicó - RN, com o objetivo de ajudar as crianças carentes de escolas públicas da região.</p>
                     <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Na primeira edição, conseguimos arrecadar o suficiente para doar 12 kits. Com a ajuda do público,
                         já doamos mais de mil kits.</p>
                 </div>
+
             </div>
         </div>
-    </div>
-    <div class="d-flex justify-content-end">
-        <div class="card mb-3 text-white w-75 d-flex p-0 align-self-end" style="background-color: #474787">
-            <div class="row ">
-                <div class="col-6">
+        <div class="d-flex justify-content-lg-end justify-content-sm-center">
+            <div class="card mb-3 text-white w-75 d-flex p-0 " style="background-color: #474787">
+                <div class="d-flex flex-lg-row flex-sm-column-reverse ">
+
                     <div class="card-body">
 
                         <h2 class="card-title">O que fazemos</h2>
@@ -40,9 +41,10 @@
                         <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Nosso objetivo é atender alunos de escolas públicas, de modo que possam iniciar o ano letivo com um material escolar decente.</p>
                         <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Esperamos que assim eles se sintam mais estimulados em relação aos estudos e consigam contribuir para um futuro melhor.</p>
                     </div>
-                </div>
-                <div class="col-6 ">
-                    <img class="img-responsive" src="{{ asset('images/foto-oque-fazemos.png') }}" alt="entrega de kits" width="100%">
+
+                    <div class="col-lg-6 col-sm-12 ">
+                        <img class="img-fluid" src="{{ asset('images/foto-oque-fazemos.png') }}" alt="entrega de kits" width="100%">
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,17 +54,15 @@
 
 <div class="row">
     <h2 style="color:#221E41">Como funciona?</h2>
-    <div class="d-flex align-items-center justify-content-between">
-        <livewire:info-card title='Doações' description='Com as doações, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-doacoes.png') }}" bg_color='#e73042' />
+    <div class="d-flex row align-items-center justify-content-around ">
 
-        <livewire:info-card title='Compra de materiais' description='Com as doações, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-compra-materiais.png') }}" bg_color='#1e90ff' />
+        <livewire:info-card title='Doações' description='Arrecadamos doações de quem puder ajudar. Com elas, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-doacoes.png') }}" bg_color='#e73042' />
 
-        <livewire:info-card title='Montagem dos kits' description='Montamos os kits: caderno,
-lápis, borracha, tesoura, lápis de
-colorir, tudo em uma pasta.' image_url="{{ asset('images/foto-card-montagem.png') }}" bg_color='#A050C8' />
-        <livewire:info-card title='Entrega dos kits' description='Realizamos a entrega dos
-materiais para diversas famílias..' image_url="{{ asset('images/foto-card-entrega.png') }}" bg_color='#77AD5C' />
+        <livewire:info-card title='Compra de itens' description='Procuramos materiais de qualidade por um bom preço.' image_url="{{ asset('images/foto-card-compra-materiais.png') }}" bg_color='#1e90ff' />
 
+        <livewire:info-card title='Montagem dos kits' description='Montamos os kits: caderno, lápis, borracha, tesoura, lápis de colorir, tudo em uma pasta.' image_url="{{ asset('images/foto-card-montagem.png') }}" bg_color='#A050C8' />
+
+        <livewire:info-card title='Entrega dos kits' description='Realizamos a entrega dos materiais para diversas famílias e escolas.' image_url="{{ asset('images/foto-card-entrega.png') }}" bg_color='#77AD5C' />
     </div>
 </div>
 
@@ -122,7 +122,7 @@ materiais para diversas famílias..' image_url="{{ asset('images/foto-card-entre
 </div>
 
 <h2 class="mt-4" style="color:#221E41">Como posso ajudar a campanha?</h2>
-<div class="d-flex align-items-center justify-content-around">
+<div class="d-flex row align-items-center justify-content-around">
     <livewire:info-card title='Doação em Dinheiro' description='Ajude pelas redes bancárias, transferência ou PIX.' image_url="{{ asset('images/card-donation.png') }}" bg_color='#e73042' />
 
     <livewire:info-card title='Entrar em Contato' description='Converse conosco, tire suas dúvidas!' image_url="{{ asset('images/card-contato.png') }}" bg_color='#1e90ff' />

@@ -13,10 +13,10 @@
     <link rel="stylesheet" type="text/css" href="{{ mix('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css')}}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    
+
     @livewireStyles
 
 </head>
@@ -25,7 +25,7 @@
     @section('navbar')
     <nav class="navbar">
         <div class="navbar__items">
-            <img src="{{ asset('images/coruja-pequena.svg') }}" alt="">
+            <img src="{{ asset('images/coruja-pequena.svg') }}" alt="logo">
             <a class="navbar__items--link" href="">Sobre nós</a>
             <a class="navbar__items--link" href="">Doações</a>
             <a class="navbar__items--link" target="_blank" href="https://www.instagram.com/campanhadonacoruja/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
