@@ -131,7 +131,10 @@
 
 </div>
 <div class="d-flex justify-content-center">
-    <button class="btn-contribua mt-4 mb-4">Quero ajudar</i></button>
+    <a href="{{ url('/contato') }}">
+
+        <button class="btn-contribua mt-4 mb-4">Quero ajudar</i></button>
+    </a>
 </div>
 
 @endsection
