@@ -43,12 +43,13 @@
         <h1 class="display-4">Dados bancários</h1>
         <div class="fs-4 text-muted font-we ">Realize uma doação</div>
         <div class="d-flex flex-lg-row flex-sm-column mt-3 align-items-center">
-            <div class="d-flex flex-column mt-3 ">
-                <img class="img-fluid" src="{{ asset('images/pix.png') }}" alt="pix" width="250">
-                <h5>Chave PIX: (84) 999720931</h5>
+            <div class="d-flex flex-column mt-2 ">
+                <h4 class="align-self-lg-center align-self-sm-start ">Por PIX</h4>
+                <img class="img-fluid mt-3" src="{{ asset('images/pix.png') }}" alt="pix" width="250">
+                <h5 class="align-self-center mt-2">Chave PIX: (84) 999720931</h5>
             </div>
             <ul class="list-group ms-5">
-                <h4 class="align-self-lg-center align-self-sm-start">Transferência </br>ou Depósito:</h4>
+                <h4 class="align-self-lg-center align-self-sm-start">Por Transferência </br>ou Depósito:</h4>
                 <li class="list-group-item">Caixa Econômica Federal
                     </br>
                     Poupança
