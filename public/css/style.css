@@ -1,58 +1,58 @@
 body {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  color: #221e41;
-  font-family: Ubuntu, sans-serif;
-  font-weight: normal;
-  margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: #221e41;
+    font-family: Ubuntu, sans-serif;
+    font-weight: normal;
+    margin: 0;
 }
 
 .navbar {
-  background: #f9bcdf;
-  width: 100%;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background: #f9bcdf;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .navbar__items {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 64px;
-  width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 64px;
+    width: 350px;
 }
 
 .navbar__items--link {
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 
 .navbar__button {
-  margin-right: 64px;
+    margin-right: 64px;
 }
 
 .btn-contato {
-  width: 160px;
-  height: 36px;
-  border-radius: 12px;
-  border-style: none;
-  background-color: #ffffff;
-  color: black;
+    width: 160px;
+    height: 36px;
+    border-radius: 12px;
+    border-style: none;
+    background-color: #ffffff;
+    color: black;
 }
 .btn-contato:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .btn-contribua {
-  width: 150px;
-  height: 50px;
-  margin-top: 20px;
-  border-radius: 12px;
-  border-style: none;
-  background-color: #cf7dad;
-  color: white;
-  font-size: large;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border-style: none;
+    background-color: #cf7dad;
+    color: white;
+    font-size: large;
 }
