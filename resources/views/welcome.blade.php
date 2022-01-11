@@ -6,7 +6,10 @@
         <h3 class="display-1 fw-bold text-sm-center text-lg-start" style="color:#221E41"> Campanha Dona Coruja</h3>
         <div class="fs-4 text-muted font-we text-sm-center text-lg-start">Doação de material escolar para crianças carentes </div>
         <div class="d-flex justify-content-sm-center justify-content-lg-start">
-            <button class="btn-contribua mt-4 align-self-center">Contribua <i class="fas fa-chevron-right"></i></button>
+            <a href="{{ url('/contato') }}">
+
+                <button class="btn-contribua mt-4 align-self-center">Contribua <i class="fas fa-chevron-right"></i></button>
+            </a>
         </div>
     </div>
 
@@ -21,11 +24,10 @@
                 <div class="col-lg-6 col-sm-12 ">
                     <img class="img-fluid" width="100%" src="{{ asset('images/foto-nossa-historia.jpg') }}" alt="entrega de kits">
                 </div>
-                <div class="card-body ">
+                <div class="card-body " style="font-size: large;">
                     <h2 class="card-title">Nossa história</h2>
-                    <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Surgimos em 2014 na cidade de Caicó - RN, com o objetivo de ajudar as crianças carentes de escolas públicas da região.</p>
-                    <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Na primeira edição, conseguimos arrecadar o suficiente para doar 12 kits. Com a ajuda do público,
-                        já doamos mais de mil kits.</p>
+                    <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Em 2014, um grupo de pessoas reuniu esforços em prol da arrecadação de dinheiro e de materiais escolares, a fim de ajudar crianças cujas famílias não tinham condições de comprar todo o aparato necessário para a volta às aulas.</p>
+                    <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Desde então, todos os anos a campanha Dona Coruja garante que jovens estudantes de Caicó e região recebam auxílio.</p>
                 </div>
 
             </div>
@@ -34,12 +36,11 @@
             <div class="card mb-3 text-white w-75 d-flex p-0 " style="background-color: #474787">
                 <div class="d-flex flex-lg-row flex-sm-column-reverse ">
 
-                    <div class="card-body">
+                    <div class="card-body" style="font-size: large;">
 
                         <h2 class="card-title">O que fazemos</h2>
-                        <p class="card-text" style="  text-align: justify; text-justify: inter-word;">A campanha Dona Coruja facilita o acesso de materiais escolares para crianças carentes.</p>
-                        <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Nosso objetivo é atender alunos de escolas públicas, de modo que possam iniciar o ano letivo com um material escolar decente.</p>
-                        <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Esperamos que assim eles se sintam mais estimulados em relação aos estudos e consigam contribuir para um futuro melhor.</p>
+                        <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Nosso objetivo é atender alunos de escolas públicas, de modo que possam iniciar o ano letivo com um material escolar decente. Esperamos que assim eles se sintam mais estimulados em relação aos estudos e consigam contribuir para um futuro melhor.</p>
+                        <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Faça parte de nossa corrente. Toda ajuda é bem-vinda.</p>
                     </div>
 
                     <div class="col-lg-6 col-sm-12 ">
@@ -51,10 +52,16 @@
     </div>
 </div>
 
+<div class="row">
+    <h2 class="mt-4" style="color:#221E41">Acompanhe nosso alcançe ao longo dos anos</h2>
+    <div class="d-flex justify-content-center">
+        <img class="w-75 " src="{{ asset('images/graphic.png') }}" alt="grafico">
+    </div>
+</div>
 
 <div class="row">
     <h2 style="color:#221E41">Como funciona?</h2>
-    <div class="d-flex row align-items-center justify-content-around ">
+    <div class="d-flex row align-items-center justify-content-around " style="font-size: large;">
 
         <livewire:info-card title='Doações' description='Arrecadamos doações de quem puder ajudar. Com elas, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-doacoes.png') }}" bg_color='#e73042' />
 
@@ -122,7 +129,7 @@
 </div>
 
 <h2 class="mt-4" style="color:#221E41">Como posso ajudar a campanha?</h2>
-<div class="d-flex row align-items-center justify-content-around">
+<div class="d-flex row align-items-center justify-content-around" style="font-size: large;">
     <livewire:info-card title='Doação em Dinheiro' description='Ajude pelas redes bancárias, transferência ou PIX.' image_url="{{ asset('images/card-donation.png') }}" bg_color='#e73042' />
 
     <livewire:info-card title='Entrar em Contato' description='Converse conosco, tire suas dúvidas!' image_url="{{ asset('images/card-contato.png') }}" bg_color='#1e90ff' />
@@ -131,7 +138,10 @@
 
 </div>
 <div class="d-flex justify-content-center">
-    <button class="btn-contribua mt-4 mb-4">Quero ajudar</i></button>
+    <a href="{{ url('/contato') }}">
+
+        <button class="btn-contribua mt-4 mb-4">Quero ajudar</i></button>
+    </a>
 </div>
 
 @endsection
