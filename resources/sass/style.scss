@@ -7,7 +7,6 @@ body {
     font-weight: normal;
     margin: 0;
 }
-
 .navbar {
     background: #f9bcdf;
     width: 100%;
@@ -20,9 +19,15 @@ body {
 .navbar__items {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-left: 64px;
-    width: 350px;
+    justify-content: space-around;
+    margin-left: 10%;
+    width: 50%;
+}
+
+@media screen and(max-width: 333px) {
+    .linked {
+        display: none;
+    }
 }
 
 .navbar__items--link {
@@ -31,11 +36,11 @@ body {
 }
 
 .navbar__button {
-    margin-right: 64px;
+    margin-right: 5px;
 }
 
 .btn-contato {
-    width: 160px;
+    max-width: 100%;
     height: 36px;
     border-radius: 12px;
     border-style: none;

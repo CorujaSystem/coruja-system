@@ -1,11 +1,11 @@
 @extends ('layouts.app')
 
 @section('content')
-<div class="d-flex flex-sm-column-reverse flex-lg-row text-top mt-5">
-    <div class="col-sm-8 col-lg-6 align-self-center ">
-        <h3 class="display-1 fw-bold text-sm-center text-lg-start" style="color:#221E41"> Campanha Dona Coruja</h3>
-        <div class="fs-4 text-muted font-we text-sm-center text-lg-start">Doação de material escolar para crianças carentes </div>
-        <div class="d-flex justify-content-sm-center justify-content-lg-start">
+<div class="d-flex flex-column-reverse flex-lg-row text-top mt-5">
+    <div class="col-8 col-lg-6 align-self-center ">
+        <h3 class="display-1 fw-bold text-center text-lg-start" style="color:#221E41"> Campanha Dona Coruja</h3>
+        <div class="fs-4 text-muted font-we text-center text-lg-start">Doação de material escolar para crianças carentes </div>
+        <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="{{ url('/contato') }}">
 
                 <button class="btn-contribua mt-4 align-self-center">Contribua <i class="fas fa-chevron-right"></i></button>
@@ -13,15 +13,15 @@
         </div>
     </div>
 
-    <img class="col-6 align-self-center" src="{{ asset('images/coruja-grande.png') }}" alt="coruja">
+    <img class="col-6 align-self-center img-fluid" src="{{ asset('images/coruja-grande.png') }}" alt="coruja">
 </div>
 
-<div class="row mt-sm-4 mt-lg-0">
+<div class="row mt-4 mt-lg-0">
     <h1 style="color:#221E41">Quem somos</h1>
     <div class="d-flex flex-column ">
-        <div class="card mb-3 text-white w-75 p-0 align-self-sm-center align-self-lg-start" style="background-color: #cf7dad;">
-            <div class="d-flex flex-lg-row flex-sm-column g-0">
-                <div class="col-lg-6 col-sm-12 ">
+        <div class="card mb-3 text-white w-75 p-0 align-self-center align-self-lg-start" style="background-color: #cf7dad;">
+            <div class="d-flex flex-lg-row flex-column g-0">
+                <div class="col-lg-6 col-12 ">
                     <img class="img-fluid" width="100%" src="{{ asset('images/foto-nossa-historia.jpg') }}" alt="entrega de kits">
                 </div>
                 <div class="card-body " style="font-size: large;">
@@ -32,9 +32,9 @@
 
             </div>
         </div>
-        <div class="d-flex justify-content-lg-end justify-content-sm-center">
+        <div class="d-flex justify-content-lg-end justify-content-center">
             <div class="card mb-3 text-white w-75 d-flex p-0 " style="background-color: #474787">
-                <div class="d-flex flex-lg-row flex-sm-column-reverse ">
+                <div class="d-flex flex-lg-row flex-column-reverse ">
 
                     <div class="card-body" style="font-size: large;">
 
@@ -43,7 +43,7 @@
                         <p class="card-text" style="  text-align: justify; text-justify: inter-word;">Faça parte de nossa corrente. Toda ajuda é bem-vinda.</p>
                     </div>
 
-                    <div class="col-lg-6 col-sm-12 ">
+                    <div class="col-lg-6 col-12 ">
                         <img class="img-fluid" src="{{ asset('images/foto-oque-fazemos.png') }}" alt="entrega de kits" width="100%">
                     </div>
                 </div>
@@ -55,7 +55,7 @@
 <div class="row">
     <h2 class="mt-4" style="color:#221E41">Acompanhe nosso alcançe ao longo dos anos</h2>
     <div class="d-flex justify-content-center">
-        <img class="w-75 " src="{{ asset('images/graphic.png') }}" alt="grafico">
+        <img class=" img-fluid" src="{{ asset('images/graphic.png') }}" alt="grafico">
     </div>
 </div>
 
