@@ -30,7 +30,7 @@ Route::get('/sobre', function () {
 
 Route::prefix('admin')->group(function (){
 
-    Route::get('/', [AdminController::class, 'index']);
+    Route::get('/', [AdminController::class, 'index'])->middleware('isAdmin');
 
     Route::get('/registrar', [AdminController::class, 'register']);
 
