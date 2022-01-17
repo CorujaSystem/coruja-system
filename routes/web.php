@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\School;
 use App\Models\Student;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,29 +29,12 @@ Route::get('/sobre', function () {
 });
 
 Route::prefix('admin')->group(function (){
-    Route::get('/registrar', function (){
-        return View('school-form');
-    });
 
-    Route::post('registrar/salvar', function (Request $request) {
-        $name = $request->post('name');
-        $address = $request->post('address');
-        $email = $request->post('email');
-        $communication = $request->post('communication_responsible');
-        $tel = $request->post('tel');
+    Route::get('/', [AdminController::class, 'index']);
 
-        $school = new School;
+    Route::get('/registrar', [AdminController::class, 'register']);
 
-        $school->name = $name;
-        $school->address = $address;
-        $school->email = $email;
-        $school->communication_responsible = $communication;
-        $school->tel = $tel;
-
-        $school->save();
-
-        return redirect('/');
-    })->name('salvar-escola');
+    Route::post('/registrar/salvar', [AdminController::class, 'insertSchool'])->name('salvar-escola');
 });
 
 Route::prefix('/escola')->group(function (){
