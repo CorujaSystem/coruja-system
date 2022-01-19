@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <img class="col-6 align-self-center img-fluid" src="{{ asset('images/coruja-grande.png') }}" alt="coruja">
+    <img class="col-6 align-self-center img-fluid" src="{{ asset('images/coruja-grande.WebP') }}" alt="coruja">
 </div>
 
 <div class="row mt-4 mt-lg-0">
@@ -22,7 +22,7 @@
         <div class="card mb-3 text-white w-75 p-0 align-self-center align-self-lg-start" style="background-color: #cf7dad;">
             <div class="d-flex flex-lg-row flex-column g-0">
                 <div class="col-lg-6 col-12 ">
-                    <img class="img-fluid" width="100%" src="{{ asset('images/foto-nossa-historia.jpg') }}" alt="entrega de kits">
+                    <img class="img-fluid" width="100%" src="{{ asset('images/foto-nossa-historia.WebP') }}" alt="entrega de kits">
                 </div>
                 <div class="card-body " style="font-size: large;">
                     <h2 class="card-title">Nossa história</h2>
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="col-lg-6 col-12 ">
-                        <img class="img-fluid" src="{{ asset('images/foto-oque-fazemos.png') }}" alt="entrega de kits" width="100%">
+                        <img class="img-fluid" src="{{ asset('images/foto-oque-fazemos.WebP') }}" alt="entrega de kits" width="100%">
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
 <div class="row">
     <h2 class="mt-4" style="color:#221E41">Acompanhe nosso alcançe ao longo dos anos</h2>
     <div class="d-flex justify-content-center">
-        <img class=" img-fluid" src="{{ asset('images/graphic.png') }}" alt="grafico">
+        <img class=" img-fluid" src="{{ asset('images/graphic.WebP') }}" alt="grafico">
     </div>
 </div>
 
@@ -63,13 +63,13 @@
     <h2 style="color:#221E41">Como funciona?</h2>
     <div class="d-flex row align-items-center justify-content-around " style="font-size: large;">
 
-        <livewire:info-card title='Doações' description='Arrecadamos doações de quem puder ajudar. Com elas, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-doacoes.png') }}" bg_color='#e73042' />
+        <livewire:info-card title='Doações' description='Arrecadamos doações de quem puder ajudar. Com elas, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-doacoes.WebP') }}" bg_color='#e73042' />
 
-        <livewire:info-card title='Compra de itens' description='Procuramos materiais de qualidade por um bom preço.' image_url="{{ asset('images/foto-card-compra-materiais.png') }}" bg_color='#1e90ff' />
+        <livewire:info-card title='Compra de itens' description='Procuramos materiais de qualidade por um bom preço.' image_url="{{ asset('images/foto-card-compra-materiais.WebP') }}" bg_color='#1e90ff' />
 
-        <livewire:info-card title='Montagem dos kits' description='Montamos os kits: caderno, lápis, borracha, tesoura, lápis de colorir, tudo em uma pasta.' image_url="{{ asset('images/foto-card-montagem.png') }}" bg_color='#A050C8' />
+        <livewire:info-card title='Montagem dos kits' description='Montamos os kits: caderno, lápis, borracha, tesoura, lápis de colorir, tudo em uma pasta.' image_url="{{ asset('images/foto-card-montagem.WebP') }}" bg_color='#A050C8' />
 
-        <livewire:info-card title='Entrega dos kits' description='Realizamos a entrega dos materiais para diversas famílias e escolas.' image_url="{{ asset('images/foto-card-entrega.png') }}" bg_color='#77AD5C' />
+        <livewire:info-card title='Entrega dos kits' description='Realizamos a entrega dos materiais para diversas famílias e escolas.' image_url="{{ asset('images/foto-card-entrega.WebP') }}" bg_color='#77AD5C' />
     </div>
 </div>
 
@@ -77,7 +77,7 @@
 
 <div class="d-flex justify-content-center mt-2 w-100">
 
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CNxeKn1BHRl/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+    <blockquote title="instagram" class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CNxeKn1BHRl/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
         <div style="padding:16px;"> <a href="https://www.instagram.com/p/CNxeKn1BHRl/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
                 <div style=" display: flex; flex-direction: row; align-items: center;">
                     <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
@@ -130,11 +130,11 @@
 
 <h2 class="mt-4" style="color:#221E41">Como posso ajudar a campanha?</h2>
 <div class="d-flex row align-items-center justify-content-around" style="font-size: large;">
-    <livewire:info-card title='Doação em Dinheiro' description='Ajude pelas redes bancárias, transferência ou PIX.' image_url="{{ asset('images/card-donation.png') }}" bg_color='#e73042' />
+    <livewire:info-card title='Doação em Dinheiro' description='Ajude pelas redes bancárias, transferência ou PIX.' image_url="{{ asset('images/card-donation.WebP') }}" bg_color='#e73042' />
 
-    <livewire:info-card title='Entrar em Contato' description='Converse conosco, tire suas dúvidas!' image_url="{{ asset('images/card-contato.png') }}" bg_color='#1e90ff' />
+    <livewire:info-card title='Entrar em Contato' description='Converse conosco, tire suas dúvidas!' image_url="{{ asset('images/card-contato.WebP') }}" bg_color='#1e90ff' />
 
-    <livewire:info-card title='Compartilhe nas redes sociais' description='Faça a campanha atingir mais pessoas!' image_url="{{ asset('images/card-redes-sociais.png') }}" bg_color='#A050C8' />
+    <livewire:info-card title='Compartilhe nas redes sociais' description='Faça a campanha atingir mais pessoas!' image_url="{{ asset('images/card-redes-sociais.WebP') }}" bg_color='#A050C8' />
 
 </div>
 <div class="d-flex justify-content-center">

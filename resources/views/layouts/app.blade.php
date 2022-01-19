@@ -17,6 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="O objetivo da campanha dona coruja é atender alunos de escolas públicas, de modo que possam iniciar o ano letivo com um material escolar decente. Esperamos que assim eles se sintam mais estimulados em relação aos estudos e consigam contribuir para um futuro melhor.">
 
     @livewireStyles
 
