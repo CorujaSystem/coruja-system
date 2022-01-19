@@ -16,7 +16,7 @@
     <div class="row row-cols-1 row-cols-md-2 g-4 w-75 ">
         <div class="col">
             <div class="card">
-                <img src="{{ url('/images/person1.WebP')}}" class="card-img-top " alt="person1">
+                <img src="{{ url('/images/person1.webp')}}" class="card-img-top " alt="person1">
                 <div class="card-body">
                     <h5 class="card-title">Eugênia Kelly</h5>
                     <p class="card-text">Professora da rede pública municipal de Caicó RN. Desde 2014 coordena a Campanha Dona Coruja .</p>
@@ -25,7 +25,7 @@
         </div>
         <div class="col mb-3">
             <div class="card">
-                <img src="{{ url('/images/person2.WebP')}}" class="card-img-top" alt="person2">
+                <img src="{{ url('/images/person2.webp')}}" class="card-img-top" alt="person2">
                 <div class="card-body">
                     <h5 class="card-title">Alan Roque</h5>
                     <p class="card-text">Biólogo/botânico do Parque das Dunas no municipal de Natal - RN.

@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <img class="col-6 align-self-center img-fluid" src="{{ asset('images/coruja-grande.WebP') }}" alt="coruja">
+    <img class="col-6 align-self-center img-fluid" src="{{ asset('images/coruja-grande.webp') }}" alt="coruja">
 </div>
 
 <div class="row mt-4 mt-lg-0">
@@ -22,7 +22,7 @@
         <div class="card mb-3 text-white w-75 p-0 align-self-center align-self-lg-start" style="background-color: #cf7dad;">
             <div class="d-flex flex-lg-row flex-column g-0">
                 <div class="col-lg-6 col-12 ">
-                    <img class="img-fluid" width="100%" src="{{ asset('images/foto-nossa-historia.WebP') }}" alt="entrega de kits">
+                    <img class="img-fluid" width="100%" src="{{ asset('images/foto-nossa-historia.webp') }}" alt="entrega de kits">
                 </div>
                 <div class="card-body " style="font-size: large;">
                     <h2 class="card-title">Nossa história</h2>
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="col-lg-6 col-12 ">
-                        <img class="img-fluid" src="{{ asset('images/foto-oque-fazemos.WebP') }}" alt="entrega de kits" width="100%">
+                        <img class="img-fluid" src="{{ asset('images/foto-oque-fazemos.webp') }}" alt="entrega de kits" width="100%">
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
 <div class="row">
     <h2 class="mt-4" style="color:#221E41">Acompanhe nosso alcançe ao longo dos anos</h2>
     <div class="d-flex justify-content-center">
-        <img class=" img-fluid" src="{{ asset('images/graphic.WebP') }}" alt="grafico">
+        <img class=" img-fluid" src="{{ asset('images/graphic.webp') }}" alt="grafico">
     </div>
 </div>
 
@@ -63,13 +63,13 @@
     <h2 style="color:#221E41">Como funciona?</h2>
     <div class="d-flex row align-items-center justify-content-around " style="font-size: large;">
 
-        <livewire:info-card title='Doações' description='Arrecadamos doações de quem puder ajudar. Com elas, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-doacoes.WebP') }}" bg_color='#e73042' />
+        <livewire:info-card title='Doações' description='Arrecadamos doações de quem puder ajudar. Com elas, compramos os materiais escolares.' image_url="{{ asset('images/foto-card-doacoes.webp') }}" bg_color='#e73042' />
 
-        <livewire:info-card title='Compra de itens' description='Procuramos materiais de qualidade por um bom preço.' image_url="{{ asset('images/foto-card-compra-materiais.WebP') }}" bg_color='#1e90ff' />
+        <livewire:info-card title='Compra de itens' description='Procuramos materiais de qualidade por um bom preço.' image_url="{{ asset('images/foto-card-compra-materiais.webp') }}" bg_color='#1e90ff' />
 
-        <livewire:info-card title='Montagem dos kits' description='Montamos os kits: caderno, lápis, borracha, tesoura, lápis de colorir, tudo em uma pasta.' image_url="{{ asset('images/foto-card-montagem.WebP') }}" bg_color='#A050C8' />
+        <livewire:info-card title='Montagem dos kits' description='Montamos os kits: caderno, lápis, borracha, tesoura, lápis de colorir, tudo em uma pasta.' image_url="{{ asset('images/foto-card-montagem.webp') }}" bg_color='#A050C8' />
 
-        <livewire:info-card title='Entrega dos kits' description='Realizamos a entrega dos materiais para diversas famílias e escolas.' image_url="{{ asset('images/foto-card-entrega.WebP') }}" bg_color='#77AD5C' />
+        <livewire:info-card title='Entrega dos kits' description='Realizamos a entrega dos materiais para diversas famílias e escolas.' image_url="{{ asset('images/foto-card-entrega.webp') }}" bg_color='#77AD5C' />
     </div>
 </div>
 
@@ -130,11 +130,11 @@
 
 <h2 class="mt-4" style="color:#221E41">Como posso ajudar a campanha?</h2>
 <div class="d-flex row align-items-center justify-content-around" style="font-size: large;">
-    <livewire:info-card title='Doação em Dinheiro' description='Ajude pelas redes bancárias, transferência ou PIX.' image_url="{{ asset('images/card-donation.WebP') }}" bg_color='#e73042' />
+    <livewire:info-card title='Doação em Dinheiro' description='Ajude pelas redes bancárias, transferência ou PIX.' image_url="{{ asset('images/card-donation.webp') }}" bg_color='#e73042' />
 
-    <livewire:info-card title='Entrar em Contato' description='Converse conosco, tire suas dúvidas!' image_url="{{ asset('images/card-contato.WebP') }}" bg_color='#1e90ff' />
+    <livewire:info-card title='Entrar em Contato' description='Converse conosco, tire suas dúvidas!' image_url="{{ asset('images/card-contato.webp') }}" bg_color='#1e90ff' />
 
-    <livewire:info-card title='Compartilhe nas redes sociais' description='Faça a campanha atingir mais pessoas!' image_url="{{ asset('images/card-redes-sociais.WebP') }}" bg_color='#A050C8' />
+    <livewire:info-card title='Compartilhe nas redes sociais' description='Faça a campanha atingir mais pessoas!' image_url="{{ asset('images/card-redes-sociais.webp') }}" bg_color='#A050C8' />
 
 </div>
 <div class="d-flex justify-content-center">
