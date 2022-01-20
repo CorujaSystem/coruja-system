@@ -14,8 +14,7 @@ class AddSchoolIdToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('school_id')->nullable();
-            $table->foreign('school_id')->references('id')->on('schools');
+            $table->foreignId('school_id')->nullable()->constrained('schools');
         });
     }
 
