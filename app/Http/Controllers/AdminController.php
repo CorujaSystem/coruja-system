@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\School;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class AdminController extends Controller
 {
@@ -38,6 +41,16 @@ class AdminController extends Controller
         $school->tel = $tel;
 
         $school->save();
+
+        $user = new User;
+
+        $school_name = $school->name;
+
+        $user->name = $school_name;
+        $user->school_id = $school->id;
+        $user->email = str_replace(" ", "", strtolower($school_name)) . "@donacoruja.org";
+        $user->password = Hash::make($request->post('password'));
+        $user->save();
 
         return redirect('/');
     }

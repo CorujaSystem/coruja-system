@@ -28,9 +28,9 @@ Route::get('/sobre', function () {
     return view('about');
 });
 
-Route::prefix('admin')->group(function (){
+Route::group(['prefix' => 'admin','middleware' => ['isAdmin']], function (){
 
-    Route::get('/', [AdminController::class, 'index'])->middleware('isAdmin');
+    Route::get('/', [AdminController::class, 'index']);
 
     Route::get('/registrar', [AdminController::class, 'register']);
 
@@ -43,6 +43,9 @@ Route::prefix('/escola')->group(function (){
     });
 
     Route::post('registrar/salvar', function (Request $request) {
+
+        $user = auth()->user();
+
         $name = $request->post('name');
         $gender = $request->post('gender');
         $tel = $request->post('tel');
@@ -56,7 +59,7 @@ Route::prefix('/escola')->group(function (){
         $student->tel = $tel;
         $student->responsible = $responsible;
         $student->observation = $observation;
-
+        $student->school_id = $user->school_id;
         $student->save();
 
         return redirect('/');
