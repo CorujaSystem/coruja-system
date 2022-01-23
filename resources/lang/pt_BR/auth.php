@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'failed' => 'Account not found.',
-    'password' => 'Incorrect password.',
-    'throttle' => 'Too much login atempts. Try again in :seconds secs.',
+    'failed' => 'Conta não encontrada.',
+    'password' => 'Senha incorreta.',
+    'throttle' => 'Muitas tentativas de login. Tente novamente em :seconds segundos.',
 
 ];
