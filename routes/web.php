@@ -64,4 +64,6 @@ Route::prefix('/escola')->group(function (){
 
         return redirect('/');
     })->name('salvar-estudante');
+Route::get('/admin', function() {
+    return view('admin.index');
 });
