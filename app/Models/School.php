@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class School extends Model
 {
+
+    
+    public function user(){
+        return $this->hasOne(User::class);
+    }
+
     use HasFactory;
+
+    protected $guarded = [];  
+
 }
