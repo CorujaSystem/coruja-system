@@ -28,10 +28,10 @@ Route::get('/sobre', function () {
     return view('about');
 });
 
-Route::group(['prefix' => 'admin','middleware' => ['isAdmin']], function (){
+Route::group(['prefix' => 'admin'], function (){
 
     Route::get('/', [AdminController::class, 'index']);
-
+    Route::get('/escola', [AdminController::class, 'indexSchools']);
     Route::get('/registrar', [AdminController::class, 'register']);
 
     Route::post('/registrar/salvar', [AdminController::class, 'insertSchool'])->name('salvar-escola');
@@ -64,6 +64,4 @@ Route::prefix('/escola')->group(function (){
 
         return redirect('/');
     })->name('salvar-estudante');
-Route::get('/admin', function() {
-    return view('admin.index');
 });

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +22,7 @@
 
     @livewireStyles
 </head>
+
 <body>
 
     <div class="d-flex h-100 w-100">
@@ -29,18 +31,22 @@
         <aside class="sidebar">
             <div class="sidebar-brand">
                 <a href="#">
-                    <img src="{{ asset('images/coruja-grande.png') }}" alt="">
+                    <img src="{{ asset('images/coruja-grande.webp') }}" alt="">
                 </a>
             </div>
 
             <ul class="sidebar-nav">
-                <li class="sidebar-item active">
-                    Dashboard
-                </li>
+                <a href="{{ url('/admin') }}" >
+                    <li class="sidebar-item active">
+                        Dashboard
+                    </li>
+                </a>
 
-                <li class="sidebar-item">
-                    Escolas
-                </li>
+                <a href="{{ url('/admin/escola') }}" >
+                    <li class="sidebar-item">
+                        Escolas
+                    </li>
+                </a>
 
                 <li class="sidebar-item">
                     Turmas
@@ -86,4 +92,5 @@
         }
     </script>
 </body>
+
 </html>
