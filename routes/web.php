@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Student;
+use App\Models\School;
 use App\Http\Controllers\AdminController;
 use App\Http\Livewire\StudentForm;
 
@@ -45,14 +46,19 @@ Route::prefix('/escola')->group(function (){
 Route::prefix('/admin/escola')->group(function (){
     Route::get('/', [AdminController::class, 'indexSchools']);
     Route::get('/{schoolId}', [AdminController::class, 'showSchool']);
-    Route::get('/registrar', function (){
-        return View('student-form');
+    Route::get('/{schoolId}/registrar', function ($schoolId){
+        $school = School::find($schoolId);
+        return View('student-form', ['school' => $school]);
     });
 
-    Route::post('registrar/salvar', function (Request $request) {
+    Route::get('/{schoolId}/editar/{studentId}', function ($schoolId, $studentId){
+        $school = School::find($schoolId);
+        $student = Student::find($studentId);
 
-        $user = auth()->user();
+        return View('student-form', ['school' => $school, 'student' => $student]);
+    });
 
+    Route::post('/{schoolId}/registrar/salvar', function (Request $request, $schoolId) {
         $name = $request->post('name');
         $gender = $request->post('gender');
         $tel = $request->post('tel');
@@ -66,9 +72,28 @@ Route::prefix('/admin/escola')->group(function (){
         $student->tel = $tel;
         $student->responsible = $responsible;
         $student->observation = $observation;
-        $student->school_id = $user->school_id;
+        $student->school_id = $schoolId;
         $student->save();
 
-        return redirect('/');
+        return redirect('/admin/escola/' . $schoolId);
     })->name('salvar-estudante');
+
+    Route::post('/{schoolId}/editar/{studentId}/salvar', function (Request $request, $schoolId, $studentId) {
+        $student = Student::find($studentId);
+
+        $name = $request->post('name');
+        $gender = $request->post('gender');
+        $tel = $request->post('tel');
+        $responsible = $request->post('responsible');
+        $observation = $request->post('observation');
+
+        $student->name = $name;
+        $student->gender = $gender;
+        $student->tel = $tel;
+        $student->responsible = $responsible;
+        $student->observation = $observation;
+        $student->save();
+
+        return redirect('/admin/escola/' . $schoolId);
+    });
 });

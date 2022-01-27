@@ -6,7 +6,7 @@
 
 <div class="d-flex flex-column">
     <div class="mt-2 d-flex justify-content-end">
-        <a class="btn btn-success" href="{{ url('/admin/escola/registrar') }}">
+        <a class="btn btn-success" href="{{ url('/admin/escola/'.$school->id.'/registrar') }}">
             <i class="fas fa-plus"></i>
             Adicionar Estudante
         </a>
@@ -34,9 +34,11 @@
                 <td scope="row">{{$s->tel}}</td>
                 <td scope="row">{{$s->responsible}}</td>
                 <td scope="row">{{$s->observation}}</td>
-                <td scope="row"><a href="{{url('/admin/escola'.$s->id.'/editar/')}}">
+                <td scope="row">
+                    <a href="{{url('/admin/escola/'.$school->id.'/editar/'.$s->id)}}">
                         <i class="fas fa-edit text-dark"></i>
-                    </a></td>
+                    </a>
+                </td>
             </tr>
 
             @endforeach
