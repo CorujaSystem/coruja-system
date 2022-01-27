@@ -37,9 +37,10 @@
                 <td scope="row">{{$s->address}}</td>
                 <td scope="row">{{$s->communication_responsible}}</td>
                 <td scope="row">
-                    <a class="mr-2" href="{{url('/admin/editar/'.$s->id)}}">
+                    <a class="mx-3" href="{{url('/admin/editar/'.$s->id)}}">
                         <i class="fas fa-cog text-dark "></i>
                     </a>
+
                     <a href="{{url('/admin/escola/'.$s->id)}}">
                         <i class="fas fa-user-graduate text-dark"></i>
                     </a>

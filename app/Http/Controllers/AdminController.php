@@ -17,12 +17,11 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
-    public function indexSchools()
+    public function indexSchools(Request $request)
     {
-
-        $schools = School::all();
-
-        return view('admin.schools', ['schools' => $schools]);
+        $sort = $request->query('sort');
+        $schools = School::all()->sortBy($sort);
+        return view('admin.schools', ['schools' => $schools, 'sort' => $sort]);
     }
     public function showSchool($schoolId)
     {
