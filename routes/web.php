@@ -19,6 +19,19 @@ use Illuminate\Support\Facades\Redirect;
 |
 */
 
+Route::get('/redirect-user', function(Request $request){
+    $user = $request->user();
+
+    if($user->is_admin) {
+        return Redirect::to('/admin');
+    }
+    if($user->school_id) {
+        return Redirect::to('/escola/registrar');
+    }
+
+    return Redirect::to('/');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

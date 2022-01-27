@@ -35,7 +35,7 @@
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Senha *</label>
-        <input name="password" required type="password" class="form-control" placeholder="Senha">
+        <input name="password" @if(! ($school ?? false)) required @endif type="password" class="form-control" placeholder="Senha">
     </div>
     <div class="mb-3">
         <input type="submit" class="form-control" value="Enviar">
