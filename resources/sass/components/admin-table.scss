@@ -1,3 +1,18 @@
-.clickable-row:hover {
-    cursor: pointer;
+.table {
+            th {
+                a, a:active {
+                    color: #212529;
+                    text-decoration: inherit;
+                    font-weight: inherit;
+                    margin-right: 16px;
+                }
+
+                a.active {
+                    margin-right: 0px;
+
+                    i {
+                        margin-left: 6px;
+                    }
+                }
+            }
 }

@@ -13,17 +13,53 @@
     </div>
 
     <table class="table table-hover mt-4">
-        <thread>
+        <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Gênero</th>
-                <th scope="col">Telefone</th>
-                <th scope="col">Responsável</th>
-                <th scope="col">Observação</th>
+            <th scope="col">
+                    <a data-column="id" href="#">
+                        #
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="name" href="#">
+                        Nome
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="gender" href="#">
+                        Sexo
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="tel" href="#">
+                        Telefone
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="responsible" href="#">
+                        Responsável
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="observation" href="#">
+                        Observação
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="observation" href="#">
+                        Kit Concluído
+                    </a>
+                </th>
+
                 <th scope="col"></th>
             </tr>
-        </thread>
+        </thead>
         <tbody>
             @foreach ($students as $s)
 
@@ -35,8 +71,18 @@
                 <td scope="row">{{$s->responsible}}</td>
                 <td scope="row">{{$s->observation}}</td>
                 <td scope="row">
+                    <form class="d-flex mx-3" action="{{url('/admin/escola/'.$school->id.'/kit/'.$s->id)}}" method="POST">
+                        @csrf
+                        <input onchange="this.form.submit()" type="checkbox" id="kit" name="kit" @if($s->is_kit_done == 'true') checked @endif/>
+                    </form>
+                </td>
+                <td scope="row">
                     <a href="{{url('/admin/escola/'.$school->id.'/editar/'.$s->id)}}">
-                        <i class="fas fa-edit text-dark"></i>
+                        <i class="fa fa-edit text-dark"></i>
+                    </a>
+
+                    <a href="{{url('/admin/escola/'.$school->id.'/remover/'.$s->id)}}">
+                        <i class="fa fa-trash mx-3 text-danger"></i>
                     </a>
                 </td>
             </tr>
@@ -45,4 +91,25 @@
         </tbody>
     </table>
 </div>
+
+<script>
+        const sort = "{{$sort}}";
+        const direction = "{{$direction}}";
+        const columnsLinks = document.querySelectorAll('table > thead > tr > th > a')
+        columnsLinks.forEach(column => {
+            const columnKey = column.dataset.column
+            if (columnKey === sort) {
+                column.classList.add('active')
+                if (direction === 'asc') {
+                    column.innerHTML = `${column.innerHTML} <i class="fas fa-sort-up"></i> `
+                } else {
+                    column.innerHTML = `${column.innerHTML} <i class="fas fa-sort-down"></i>`
+                }
+                column.href=`?sort=${columnKey}&direction=${direction === 'asc' ? 'desc' : 'asc'}`
+            } else {
+                column.href=`?sort=${columnKey}`
+            }
+        })
+
+    </script>
 @endsection
