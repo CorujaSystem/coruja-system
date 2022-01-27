@@ -47,6 +47,13 @@
                         Escolas
                     </li>
                 </a>
+
+                <a href="{{ url('/admin/anos') }}">
+                    <li class="sidebar-item">
+                        Produção por ano
+                    </li>
+                </a>
+
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <li class="sidebar-item">
                         Logout

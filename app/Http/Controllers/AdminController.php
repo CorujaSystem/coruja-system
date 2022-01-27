@@ -108,7 +108,7 @@ class AdminController extends Controller
         $user->password = Hash::make($request->post('password'));
         $user->save();
 
-        return redirect('/admin');
+        return redirect('/admin/escola');
     }
 
 
@@ -135,9 +135,16 @@ class AdminController extends Controller
         $school->communication_responsible = $communication;
         $school->tel = $tel;
 
-        $school->save();
+        $user = User::where('school_id', $schoolId)->first();
 
-        return redirect("/admin");
+        $user->email = str_replace(" ", "", strtolower($name)) . "@donacoruja.org";
+        if($request->post('password') != ""){
+            $user->password = Hash::make($request->post('password'));
+        }
+        $school->save();
+        $user->save();
+
+        return redirect("/admin/escola");
 
     }
 }

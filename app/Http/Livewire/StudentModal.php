@@ -20,7 +20,7 @@ class StudentModal extends ModalComponent
 
     protected $rules = [
         'name' => 'required',
-        'tel' => 'required',
+        'tel' => 'nullable',
         'gender' => 'required',
         'responsible' => 'required',
         'observation' => 'nullable'

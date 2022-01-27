@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Student;
 use App\Models\School;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\YearProductionController;
 use App\Http\Livewire\StudentForm;
+use App\Models\YearProduction;
 use Illuminate\Support\Facades\Redirect;
 
 /*
@@ -19,8 +21,34 @@ use Illuminate\Support\Facades\Redirect;
 |
 */
 
+Route::get('/redirect-user', function(Request $request){
+    $user = $request->user();
+
+    if($user->is_admin) {
+        return Redirect::to('/admin');
+    }
+    if($user->school_id) {
+        return Redirect::to('/escola/registrar');
+    }
+
+    return Redirect::to('/');
+});
+
 Route::get('/', function () {
-    return view('welcome');
+    $yearProductions = YearProduction::all()->sortBy('year');
+
+    $yearProductionsData = [];
+    $yearProductionsLabels = [];
+
+    foreach ($yearProductions as $yearProduction) {
+        $yearProductionsData[] = $yearProduction->production;
+        $yearProductionsLabels[] = $yearProduction->year;
+    }
+
+    return view('welcome', [
+        'yearProductionsData' => json_encode($yearProductionsData),
+        'yearProductionsLabels' => json_encode($yearProductionsLabels)
+    ]);
 });
 
 Route::get('/contato', function () {
@@ -40,6 +68,12 @@ Route::group(['prefix' => 'admin'], function (){
     Route::post('/editar/{schoolId}/salvar', [AdminController::class, 'saveSchool'])->middleware(['isAdmin']);
 });
 
+Route::prefix('/admin/anos')->group(function() {
+    Route::get('/', [YearProductionController::class, 'index'])->middleware(['isAdmin']);
+    Route::post('/registrar', [YearProductionController::class, 'store'])->middleware(['isAdmin']);
+    Route::post('/atualizar/{yearProductionId}', [YearProductionController::class, 'update'])->middleware(['isAdmin']);
+    Route::get('/remover/{yearProductionId}', [YearProductionController::class, 'remove'])->middleware(['isAdmin']);
+});
 
 Route::prefix('/escola')->group(function (){
     Route::get('/registrar', StudentForm::class);
