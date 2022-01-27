@@ -11341,3 +11341,11 @@ textarea.form-control-lg {
 .table th a.active i {
   margin-left: 6px;
 }
+
+.chart {
+  width: 25vw;
+}
+
+.bar-chart {
+  width: 40vw;
+}
