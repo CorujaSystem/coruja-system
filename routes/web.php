@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Student;
 use App\Http\Controllers\AdminController;
+use App\Http\Livewire\StudentForm;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,11 @@ Route::group(['prefix' => 'admin'], function (){
     Route::get('/editar/{schoolId}', [AdminController::class, 'update']);
     Route::post('/editar/{schoolId}/salvar', [AdminController::class, 'saveSchool']);
 });
+
+
+Route::prefix('/escola')->group(function (){
+    Route::get('/registrar', StudentForm::class);
+}
 
 Route::prefix('/admin/escola')->group(function (){
     Route::get('/{schoolId}', [AdminController::class, 'showSchool']);
