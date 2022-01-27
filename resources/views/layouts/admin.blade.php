@@ -37,7 +37,7 @@
 
             <ul class="sidebar-nav">
                 <a href="{{ url('/admin') }}" >
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item">
                         Dashboard
                     </li>
                 </a>
@@ -47,35 +47,11 @@
                         Escolas
                     </li>
                 </a>
-
-                <li class="sidebar-item">
-                    Turmas
-                </li>
-
-                <li class="sidebar-item">
-                    Pastas
-                </li>
             </ul>
         </aside>
         @show
 
         <div class="d-flex flex-column w-100">
-            @section('admin_navbar')
-            <nav class="navbar p-4 border-bottom-2 border-2 border-bottom navbar-light bg-light navbar-expand-sm ">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item">
-                        <button class="btn btn-light me-3" type="button" onclick="toggleSidebar()">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </li>
-
-                    <li class="navbar-brand h1 m-0 p-0">
-                        Dashboard
-                    </li>
-                </ul>
-            </nav>
-            @show
-
             <div class="p-4 d-flex flex-column">
                 @yield('content')
             </div>
@@ -87,9 +63,16 @@
     @livewireScripts
 
     <script>
-        function toggleSidebar() {
-            alert('toggling sidebar');
-        }
+        window.addEventListener('load', function(){
+            const route = window.location.href;
+            const links = document.querySelectorAll('.sidebar-item');
+
+            links.forEach(link => {
+                if(link.parentElement.href == route){
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 
