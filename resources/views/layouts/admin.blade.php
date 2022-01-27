@@ -36,17 +36,26 @@
             </div>
 
             <ul class="sidebar-nav">
-                <a href="{{ url('/admin') }}" >
+                <a href="{{ url('/admin') }}">
                     <li class="sidebar-item">
                         Dashboard
                     </li>
                 </a>
 
-                <a href="{{ url('/admin/escola') }}" >
+                <a href="{{ url('/admin/escola') }}">
                     <li class="sidebar-item">
                         Escolas
                     </li>
                 </a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <li class="sidebar-item">
+                        Logout
+                    </li>
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                </form>
             </ul>
         </aside>
         @show
@@ -63,12 +72,12 @@
     @livewireScripts
 
     <script>
-        window.addEventListener('load', function(){
+        window.addEventListener('load', function() {
             const route = window.location.href;
             const links = document.querySelectorAll('.sidebar-item');
 
             links.forEach(link => {
-                if(link.parentElement.href == route){
+                if (link.parentElement.href == route) {
                     link.classList.add('active');
                 }
             });
