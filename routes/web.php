@@ -29,7 +29,7 @@ Route::get('/sobre', function () {
 });
 
 Route::group(['prefix' => 'admin'], function (){
-    Route::get('/', [AdminController::class, 'indexSchools']);
+    Route::get('/', [AdminController::class, 'index']);
     Route::get('/registrar', [AdminController::class, 'register']);
     Route::post('/registrar/salvar', [AdminController::class, 'insertSchool'])->name('salvar-escola');
     Route::get('/editar/{schoolId}', [AdminController::class, 'update']);
@@ -37,8 +37,8 @@ Route::group(['prefix' => 'admin'], function (){
 });
 
 Route::prefix('/admin/escola')->group(function (){
+    Route::get('/', [AdminController::class, 'indexSchools']);
     Route::get('/{schoolId}', [AdminController::class, 'showSchool']);
-
     Route::get('/registrar', function (){
         return View('student-form');
     });
