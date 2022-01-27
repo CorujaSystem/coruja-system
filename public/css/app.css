@@ -11328,3 +11328,20 @@ textarea.form-control-lg {
 .sidebar-item:hover {
   background: #e6e6e6;
 }
+
+.clickable-row:hover {
+  cursor: pointer;
+}
+
+.table th a, .table th a:active {
+  color: #212529;
+  text-decoration: inherit;
+  font-weight: inherit;
+  margin-right: 16px;
+}
+.table th a.active {
+  margin-right: 0px;
+}
+.table th a.active i {
+  margin-left: 6px;
+}

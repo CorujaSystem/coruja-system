@@ -15,17 +15,47 @@
     </div>
 
     <table class="table table-hover mt-4">
-        <thread>
+        <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Telefone</th>
-                <th scope="col">Email</th>
-                <th scope="col">Endereço</th>
-                <th scope="col">Responsável</th>
+                <th scope="col">
+                    <a data-column="id" href="#">
+                        #
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="name" href="#">
+                        Nome
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="tel" href="#">
+                        Telefone
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="email" href="#">
+                        Email
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="address" href="#">
+                        Endereço
+                    </a>
+                </th>
+
+                <th scope="col">
+                    <a data-column="communication_responsible" href="#">
+                        Responsável
+                    </a>
+                </th>
+
                 <th scope="col"></th>
             </tr>
-        </thread>
+        </thead>
         <tbody>
             @foreach ($schools as $s)
 
@@ -50,5 +80,26 @@
             @endforeach
         </tbody>
     </table>
+
+    <script>
+        const sort = "{{$sort}}";
+        const direction = "{{$direction}}";
+        const columnsLinks = document.querySelectorAll('table > thead > tr > th > a')
+        columnsLinks.forEach(column => {
+            const columnKey = column.dataset.column
+            if (columnKey === sort) {
+                column.classList.add('active')
+                if (direction === 'asc') {
+                    column.innerHTML = `${column.innerHTML} <i class="fas fa-sort-up"></i> `
+                } else {
+                    column.innerHTML = `${column.innerHTML} <i class="fas fa-sort-down"></i>`
+                }
+                column.href=`?sort=${columnKey}&direction=${direction === 'asc' ? 'desc' : 'asc'}`
+            } else {
+                column.href=`?sort=${columnKey}`
+            }
+        })
+
+    </script>
 </div>
 @endsection

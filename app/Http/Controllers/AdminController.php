@@ -19,17 +19,21 @@ class AdminController extends Controller
 
     public function indexSchools(Request $request)
     {
-        $sort = $request->query('sort');
-        $schools = School::all()->sortBy($sort);
-        return view('admin.schools', ['schools' => $schools, 'sort' => $sort]);
+        $sort = $request->query('sort') ?? 'id';
+        $direction = $request->query('direction') ?? 'asc';
+
+        $schools = School::all()->sortBy($sort, null, $direction == 'desc');
+        return view('admin.schools', ['schools' => $schools, 'sort' => $sort, 'direction' => $direction]);
     }
-    public function showSchool($schoolId)
+    public function showSchool(Request $request, $schoolId)
     {
+        $sort = $request->query('sort') ?? 'id';
+        $direction = $request->query('direction') ?? 'asc';
+
         $school = School::find($schoolId);
-        $students = Student::where('school_id', $schoolId)->get();
+        $students = Student::all()->where('school_id', $schoolId)->sortBy($sort, null, $direction == 'desc');
 
-
-        return view('admin.school', ['students' => $students, 'school' => $school]);
+        return view('admin.school', ['students' => $students, 'school' => $school,  'sort' => $sort, 'direction' => $direction]);
     }
 
 
