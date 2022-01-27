@@ -1,27 +1,32 @@
 @extends ('layouts.app')
 
 @section('content')
-<form action="{{ route('salvar-escola') }}" method="POST">
+<form action="{{ $school ?? '' ? url('/admin/editar/'.$school->id.'/salvar'): route('salvar-escola') }}" method="POST">
     @csrf
+
+    @if($school ?? '')
+        <input type="hidden" name="schoolId" value={{$school->id}}>
+    @endif
+
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Nome da Escola *</label>
-        <input name="name" required type="text" class="form-control" placeholder="Nome da Escola">
+        <input value="{{$school ?? '' ? $school->name : ''}}" name="name" required type="text" class="form-control" placeholder="Nome da Escola">
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Endereço *</label>
-        <input name="address" required type="text" class="form-control" placeholder="Endereço">
+        <input value="{{$school ?? '' ? $school->address : ''}}" name="address" required type="text" class="form-control" placeholder="Endereço">
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">E-mail</label>
-        <input name="email" type="email" class="form-control" placeholder="Email">
+        <input value="{{$school ?? '' ? $school->email : ''}}" name="email" type="email" class="form-control" placeholder="Email">
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Responsável pela comunicação *</label>
-        <input name="communication_responsible" required type="text" class="form-control" placeholder="Responsável pela comunicação">
+        <input value="{{$school ?? '' ? $school->communication_responsible : ''}}" name="communication_responsible" required type="text" class="form-control" placeholder="Responsável pela comunicação">
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Telefone *</label>
-        <input name="tel" required type="tel" class="form-control" placeholder="Telefone">
+        <input value="{{$school ?? '' ? $school->tel : ''}}" name="tel" required type="tel" class="form-control" placeholder="Telefone">
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Senha *</label>

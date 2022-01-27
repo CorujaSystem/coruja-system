@@ -29,17 +29,25 @@ Route::get('/sobre', function () {
     return view('about');
 });
 
-Route::group(['prefix' => 'admin','middleware' => ['isAdmin']], function (){
-
-    Route::get('/', [AdminController::class, 'index']);
-
+Route::group(['prefix' => 'admin'], function (){
+    Route::get('/', [AdminController::class, 'indexSchools']);
     Route::get('/registrar', [AdminController::class, 'register']);
-
     Route::post('/registrar/salvar', [AdminController::class, 'insertSchool'])->name('salvar-escola');
+    Route::get('/editar/{schoolId}', [AdminController::class, 'update']);
+    Route::post('/editar/{schoolId}/salvar', [AdminController::class, 'saveSchool']);
 });
+
 
 Route::prefix('/escola')->group(function (){
     Route::get('/registrar', StudentForm::class);
+}
+
+Route::prefix('/admin/escola')->group(function (){
+    Route::get('/{schoolId}', [AdminController::class, 'showSchool']);
+
+    Route::get('/registrar', function (){
+        return View('student-form');
+    });
 
     Route::post('registrar/salvar', function (Request $request) {
 

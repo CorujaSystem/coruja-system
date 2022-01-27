@@ -11286,3 +11286,45 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 0;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100vh;
+  border-right: 2px solid #e6e6e6;
+}
+.sidebar-brand {
+  margin-top: 32px;
+  margin-bottom: 24px;
+  align-self: center;
+}
+.sidebar-brand img {
+  width: 120px;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-nav a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: normal;
+}
+.sidebar-item {
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #e6e6e6;
+}
+.sidebar-item.active {
+  font-weight: 600;
+}
+.sidebar-item:hover {
+  background: #e6e6e6;
+}
