@@ -40,7 +40,7 @@ Route::group(['prefix' => 'admin'], function (){
 
 Route::prefix('/escola')->group(function (){
     Route::get('/registrar', StudentForm::class);
-}
+});
 
 Route::prefix('/admin/escola')->group(function (){
     Route::get('/{schoolId}', [AdminController::class, 'showSchool']);
