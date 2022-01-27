@@ -7,6 +7,7 @@ use App\Models\School;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\YearProductionController;
 use App\Http\Livewire\StudentForm;
+use App\Models\YearProduction;
 use Illuminate\Support\Facades\Redirect;
 
 /*
@@ -34,7 +35,20 @@ Route::get('/redirect-user', function(Request $request){
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    $yearProductions = YearProduction::all()->sortBy('year');
+
+    $yearProductionsData = [];
+    $yearProductionsLabels = [];
+
+    foreach ($yearProductions as $yearProduction) {
+        $yearProductionsData[] = $yearProduction->production;
+        $yearProductionsLabels[] = $yearProduction->year;
+    }
+
+    return view('welcome', [
+        'yearProductionsData' => json_encode($yearProductionsData),
+        'yearProductionsLabels' => json_encode($yearProductionsLabels)
+    ]);
 });
 
 Route::get('/contato', function () {

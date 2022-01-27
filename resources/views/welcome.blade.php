@@ -54,8 +54,8 @@
 
 <div class="row">
     <h2 class="mt-4" style="color:#221E41">Acompanhe nosso alcançe ao longo dos anos</h2>
-    <div class="d-flex justify-content-center">
-        <img class=" img-fluid" src="{{ asset('images/graphic.webp') }}" alt="grafico">
+    <div class="d-flex m-auto w-50">
+        <canvas id="year-productivity" width="680" height="420"></canvas>
     </div>
 </div>
 
@@ -143,5 +143,37 @@
         <button class="btn-contribua mt-4 mb-4">Quero ajudar</i></button>
     </a>
 </div>
+<script src="{{ asset('chart.js/chart.js') }}"></script>
+
+<script>
+    const kitsCtx = document.getElementById('year-productivity').getContext('2d');
+    const kitsChart = new Chart(kitsCtx, {
+        type: 'bar',
+        data: {
+            labels: {{$yearProductionsLabels}},
+            datasets: [{
+                label: 'Kits',
+                data: {{$yearProductionsData}},
+                backgroundColor: '#7b5ba1',
+            }],
+        },
+        options: {
+            showDatapoints: true,
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Kits escolares daodos',
+                    font: {
+                        size: 20
+                    }
+                }
+            }
+        }
+    });
+</script>
 
 @endsection
