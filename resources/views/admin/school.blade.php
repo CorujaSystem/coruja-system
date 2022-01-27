@@ -51,6 +51,12 @@
                     </a>
                 </th>
 
+                <th scope="col">
+                    <a data-column="observation" href="#">
+                        Kit Concluído
+                    </a>
+                </th>
+
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -65,8 +71,18 @@
                 <td scope="row">{{$s->responsible}}</td>
                 <td scope="row">{{$s->observation}}</td>
                 <td scope="row">
+                    <form class="d-flex mx-3" action="{{url('/admin/escola/'.$school->id.'/kit/'.$s->id)}}" method="POST">
+                        @csrf
+                        <input onchange="this.form.submit()" type="checkbox" id="kit" name="kit" @if($s->is_kit_done == 'true') checked @endif/>
+                    </form>
+                </td>
+                <td scope="row">
                     <a href="{{url('/admin/escola/'.$school->id.'/editar/'.$s->id)}}">
-                        <i class="fas fa-edit text-dark"></i>
+                        <i class="fa fa-edit text-dark"></i>
+                    </a>
+
+                    <a href="{{url('/admin/escola/'.$school->id.'/remover/'.$s->id)}}">
+                        <i class="fa fa-trash mx-3 text-danger"></i>
                     </a>
                 </td>
             </tr>

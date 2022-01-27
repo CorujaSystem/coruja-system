@@ -6,6 +6,7 @@ use App\Models\Student;
 use App\Models\School;
 use App\Http\Controllers\AdminController;
 use App\Http\Livewire\StudentForm;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::group(['prefix' => 'admin'], function (){
     Route::get('/registrar', [AdminController::class, 'register']);
     Route::post('/registrar/salvar', [AdminController::class, 'insertSchool'])->name('salvar-escola');
     Route::get('/editar/{schoolId}', [AdminController::class, 'update']);
+    Route::get('/remover/{schoolId}', [AdminController::class, 'remove']);
     Route::post('/editar/{schoolId}/salvar', [AdminController::class, 'saveSchool']);
 });
 
@@ -56,6 +58,13 @@ Route::prefix('/admin/escola')->group(function (){
         $student = Student::find($studentId);
 
         return View('student-form', ['school' => $school, 'student' => $student]);
+    });
+
+    Route::get('/{schoolId}/remover/{studentId}', function ($schoolId, $studentId){
+        $student = Student::find($studentId);
+        $student->delete();
+
+        return Redirect::back();
     });
 
     Route::post('/{schoolId}/registrar/salvar', function (Request $request, $schoolId) {
@@ -95,5 +104,13 @@ Route::prefix('/admin/escola')->group(function (){
         $student->save();
 
         return redirect('/admin/escola/' . $schoolId);
+    });
+
+    Route::post('/{schoolId}/kit/{studentId}', function(Request $request, $schoolId, $studentId){
+        $kitDone = $request->post('kit');
+        $student = Student::find($studentId);
+        $student->is_kit_done = $kitDone ? 'true' : 'false';
+        $student->save();
+        return Redirect::back();
     });
 });

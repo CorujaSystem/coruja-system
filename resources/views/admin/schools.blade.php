@@ -53,6 +53,8 @@
                     </a>
                 </th>
 
+                <th scope="col">Alunos</th>
+
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -66,14 +68,23 @@
                 <td scope="row">{{$s->email}}</td>
                 <td scope="row">{{$s->address}}</td>
                 <td scope="row">{{$s->communication_responsible}}</td>
-                <td scope="row">
-                    <a class="mx-3" href="{{url('/admin/editar/'.$s->id)}}">
-                        <i class="fas fa-cog text-dark "></i>
-                    </a>
 
+                <td scope="row">
                     <a href="{{url('/admin/escola/'.$s->id)}}">
                         <i class="fas fa-user-graduate text-dark"></i>
                     </a>
+                </td>
+                <td scope="row">
+
+
+                    <a href="{{url('/admin/editar/'.$s->id)}}">
+                        <i class="fas fa-cog text-dark "></i>
+                    </a>
+
+                    <a href="{{url('/admin/remover/'.$s->id)}}">
+                        <i class="fa fa-trash mx-3 text-danger"></i>
+                    </a>
+
                 </td>
             </tr>
 
