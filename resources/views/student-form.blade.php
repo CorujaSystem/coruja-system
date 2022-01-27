@@ -46,7 +46,7 @@
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Observação *</label>
-        <input value="{{$student ?? '' ? $student->observation : ''}}" name="observation" required class="form-control" placeholder="Observação">
+        <input value="{{$student ?? '' ? $student->observation : ''}}" name="observation" class="form-control" placeholder="Observação">
     </div>
     <div class="mb-3">
         <input type="submit" class="form-control" value="Enviar">

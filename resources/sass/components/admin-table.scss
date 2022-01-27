@@ -2,7 +2,7 @@
             th {
                 a, a:active {
                     color: #212529;
-                    text-decoration: inherit;
+                    text-decoration: none!important;
                     font-weight: inherit;
                     margin-right: 16px;
                 }
@@ -13,6 +13,13 @@
                     i {
                         margin-left: 6px;
                     }
+                }
+
+            }
+
+            td {
+                a {
+                    text-decoration: none!important;
                 }
             }
 }
