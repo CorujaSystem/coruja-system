@@ -18,7 +18,23 @@
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Gênero *</label>
-        <input value="{{$student ?? '' ? $student->gender : ''}}" name="gender" required type="text" class="form-control" placeholder="Gênero">
+        <select name="gender" id="gender">
+            <option value="masculino"
+                @if($student ?? '')
+                    @if($student->gender == 'masculino')
+                        selected
+                    @endif
+                @endif
+            >M</option>
+
+            <option value="feminino"
+                @if($student ?? '')
+                    @if($student->gender == 'feminino')
+                        selected
+                    @endif
+                @endif
+            >F</option>
+        </select>
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Telefone *</label>
