@@ -1,10 +1,11 @@
-    <div class="modal-dialog">
+<div class="d-flex justify-content-center">
+<div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Cadastre um aluno</h5>
                 <button wire:click="$emit('closeModal')" type="button" class="btn-close" aria-label="Close"></button>
             </div>
-            <form wire:submit.prevent="saveStudent">
+            <form id="addStudent" wire:submit.prevent="saveStudent">
                 <div class="modal-body d-flex flex-column justify-content-around">
                     <div class="d-flex mt-1">
                         <p class="col-3">Nome:</p>
@@ -19,8 +20,15 @@
                     </div>
 
                     <div class="d-flex mt-1">
-                        <p class="col-3">Sexo:</p>
-                        <input type="text" wire:model="gender" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <!-- <p class="col-3">Sexo:</p> -->
+                        <label for="gender" class="col-3">Sexo:</label>
+                        <select wire:model="gender" name="gender" id="gender" form="addStudent" class="form-select">
+                        <option selected>Escolha uma opção</option>
+
+                            <option  value="masculino">M</option>
+                            <option value="feminino">F</option>
+
+                        </select>
                         @error('gender') <span class="error">{{ $message }}</span> @enderror
 
                     </div>
@@ -47,4 +55,5 @@
 
             </form>
         </div>
+    </div>
     </div>

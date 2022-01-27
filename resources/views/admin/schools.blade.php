@@ -70,18 +70,19 @@
                 <td scope="row">{{$s->communication_responsible}}</td>
 
                 <td scope="row">
-                    <a href="{{url('/admin/escola/'.$s->id)}}">
+
+
+                    <a data-toggle="tooltip" data-placement="top" title="Ver alunos" href="{{url('/admin/escola/'.$s->id)}}">
                         <i class="fas fa-user-graduate text-dark"></i>
                     </a>
                 </td>
                 <td scope="row">
 
-
-                    <a href="{{url('/admin/editar/'.$s->id)}}">
+                    <a id="tool1" class="mr-2" data-toggle="tooltip" data-placement="top" title="Editar informações" href="{{url('/admin/editar/'.$s->id)}}">
                         <i class="fas fa-cog text-dark "></i>
                     </a>
 
-                    <a href="{{url('/admin/remover/'.$s->id)}}">
+                    <a href="{{url('/admin/remover/'.$s->id)}}"  data-toggle="tooltip" data-placement="top" title="Excluir escola" >
                         <i class="fa fa-trash mx-3 text-danger"></i>
                     </a>
 
@@ -89,6 +90,7 @@
             </tr>
 
             @endforeach
+
         </tbody>
     </table>
 
