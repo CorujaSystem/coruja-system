@@ -52,7 +52,7 @@
                 </th>
 
                 <th scope="col">
-                    <a data-column="observation" href="#">
+                    <a data-column="is_kit_done" href="#">
                         Kit Concluído
                     </a>
                 </th>
