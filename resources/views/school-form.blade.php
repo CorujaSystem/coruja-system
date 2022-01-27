@@ -1,14 +1,19 @@
-@extends ('layouts.app')
+@extends ('layouts.admin')
 
 @section('content')
+
+
 <form action="{{ $school ?? '' ? url('/admin/editar/'.$school->id.'/salvar'): route('salvar-escola') }}" method="POST">
     @csrf
 
     @if($school ?? '')
+        <h1>Editar escola {{$school->name}}</h1>
         <input type="hidden" name="schoolId" value={{$school->id}}>
+    @else
+        <h1>Adicionar Escola</h1>
     @endif
 
-    <div class="mb-3">
+    <div class="mb-3 mt-4">
         <label for="formGroupExampleInput" class="form-label">Nome da Escola *</label>
         <input value="{{$school ?? '' ? $school->name : ''}}" name="name" required type="text" class="form-control" placeholder="Nome da Escola">
     </div>
