@@ -8,6 +8,15 @@ body {
   margin: 0;
 }
 
+.year-productivity-chart {
+  width: 90% !important;
+}
+@media (min-width: 768px) {
+  .year-productivity-chart {
+    width: 50% !important;
+  }
+}
+
 .navbar {
   background: #f9bcdf;
   width: 100%;
