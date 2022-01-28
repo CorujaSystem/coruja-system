@@ -30,6 +30,16 @@ class AdminController extends Controller
         $allKitsData = [$finishedKitsCount, $pendingKitsCount] ;
         $genderKitsData = [$maleKitsCount, $femaleKitsCount];
 
+
+        // Group all students by grade and return grade count
+        $studentsByGrade = Student::all()->where('is_kit_done', false)->sortBy('grade')->groupBy('grade');
+        $studentsByGradeCount = [];
+        $studentsByGradeLabel = [];
+        foreach ($studentsByGrade as $grade => $students) {
+            $studentsByGradeCount[] = $students->count();
+            $studentsByGradeLabel[] = $grade;
+        }
+
         $schoolKitsData = [];
         $schoolLabels = [];
         $schoolAllKitsData = [];
@@ -47,7 +57,9 @@ class AdminController extends Controller
             'schoolKitsData' => json_encode($schoolKitsData),
             'schoolAllKitsData' => json_encode($schoolAllKitsData),
             'schoolLabels' => json_encode($schoolLabels),
-            'schoolCount' => count($schoolLabels)
+            'schoolCount' => count($schoolLabels),
+            'studentsByGradeCount' => json_encode($studentsByGradeCount),
+            'studentsByGradeLabel' => json_encode($studentsByGradeLabel)
         ]);
     }
 

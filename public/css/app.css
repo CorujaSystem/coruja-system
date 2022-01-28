@@ -5488,9 +5488,8 @@ textarea.form-control-lg {
 }
 
 .modal-dialog {
-  position: absolute;
-  width: 60vw;
-  top: 20%;
+  position: relative;
+  width: auto;
   margin: 0.5rem;
   pointer-events: none;
 }
@@ -11347,7 +11346,7 @@ textarea.form-control-lg {
 }
 
 .chart {
-  width: 25vw;
+  width: 23vw;
 }
 
 .bar-chart {
