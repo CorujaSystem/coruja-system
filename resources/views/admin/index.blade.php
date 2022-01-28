@@ -11,17 +11,26 @@
         </div>
     </div>
 
-    <div class="card bar-chart mx-4">
+    <div class="card chart mx-3">
         <div class="card-body ">
-            <canvas id="school-kits-canvas"></canvas>
+            <canvas id="gender-kit-canvas"></canvas>
         </div>
     </div>
+
+    <div class="card chart">
+        <div class="card-body ">
+            <canvas id="kits-by-grade-canvas"></canvas>
+        </div>
+    </div>
+
+
 </div>
 
 <div class="d-flex">
 <div class="card chart">
+    <div class="card bar-chart mx-4">
         <div class="card-body ">
-            <canvas id="gender-kit-canvas"></canvas>
+            <canvas id="school-kits-canvas"></canvas>
         </div>
     </div>
 </div>
@@ -88,6 +97,21 @@
             }],
         },
         options: kitsOptions('Kits restando por sexo')
+
+    });
+
+    const kitsByGradeCtx = document.getElementById('kits-by-grade-canvas').getContext('2d');
+    const kitsByGradeChart = new Chart(kitsByGradeCtx, {
+        type: 'doughnut',
+        data: {
+            labels: {!! $studentsByGradeLabel !!},
+            datasets: [{
+                label: 'Kits restando',
+                data: {{$studentsByGradeCount}},
+                backgroundColor: ['#059bff', '#ff6384', '#ff9020', '#ffc234', '#1dcdcd'],
+            }],
+        },
+        options: kitsOptions('Kits restando por série')
 
     });
 
