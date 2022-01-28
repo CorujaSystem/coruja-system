@@ -40,6 +40,62 @@
         <label for="formGroupExampleInput2" class="form-label">Telefone *</label>
         <input value="{{$student ?? '' ? $student->tel : ''}}" name="tel" type="tel" class="form-control" placeholder="Telefone">
     </div>
+
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Série *</label>
+        <select name="grade" id="grade">
+            <option value="1º ano"
+                @if($student ?? '')
+                    @if($student->grade == '1º ano')
+                        selected
+                    @endif
+                @endif
+            >
+                1º ano
+            </option>
+
+            <option value="2º ano"
+                @if($student ?? '')
+                    @if($student->grade == '2º ano')
+                        selected
+                    @endif
+                @endif
+            >
+                2º ano
+            </option>
+
+            <option value="3º ano"
+                @if($student ?? '')
+                    @if($student->grade == '3º ano')
+                        selected
+                    @endif
+                @endif
+            >
+                3º ano
+            </option>
+
+            <option value="4º ano"
+                @if($student ?? '')
+                    @if($student->grade == '4º ano')
+                        selected
+                    @endif
+                @endif
+            >
+                4º ano
+            </option>
+
+            <option value="5º ano"
+                @if($student ?? '')
+                    @if($student->grade == '5º ano')
+                        selected
+                    @endif
+                @endif
+            >
+                5º ano
+            </option>
+        </select>
+    </div>
+
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Responsável  *</label>
         <input value="{{$student ?? '' ? $student->responsible : ''}}" name="responsible" required type="text" class="form-control" placeholder="Responsável">

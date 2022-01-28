@@ -106,6 +106,7 @@ Route::prefix('/admin/escola')->group(function (){
         $gender = $request->post('gender');
         $tel = $request->post('tel');
         $responsible = $request->post('responsible');
+        $grade = $request->post('grade');
         $observation = $request->post('observation');
 
         $student = new Student;
@@ -115,6 +116,7 @@ Route::prefix('/admin/escola')->group(function (){
         $student->tel = $tel;
         $student->responsible = $responsible;
         $student->observation = $observation;
+        $student->grade = $grade;
         $student->school_id = $schoolId;
         $student->save();
 
@@ -127,6 +129,7 @@ Route::prefix('/admin/escola')->group(function (){
         $name = $request->post('name');
         $gender = $request->post('gender');
         $tel = $request->post('tel');
+        $grade = $request->post('grade');
         $responsible = $request->post('responsible');
         $observation = $request->post('observation');
 
@@ -135,6 +138,7 @@ Route::prefix('/admin/escola')->group(function (){
         $student->tel = $tel;
         $student->responsible = $responsible;
         $student->observation = $observation;
+        $student->grade = $grade;
         $student->save();
 
         return redirect('/admin/escola/' . $schoolId);
