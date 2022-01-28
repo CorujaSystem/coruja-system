@@ -15,6 +15,7 @@ class StudentModal extends ModalComponent
     public $gender;
     public $observation;
     public $responsible;
+    public $grade;
     public User $user;
     public bool $show;
 
@@ -23,6 +24,7 @@ class StudentModal extends ModalComponent
         'tel' => 'nullable',
         'gender' => 'required',
         'responsible' => 'required',
+        'grade' => 'required',
         'observation' => 'nullable'
     ];
 

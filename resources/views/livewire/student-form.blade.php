@@ -9,6 +9,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Telefone</th>
                     <th scope="col">Sexo</th>
+                    <th scope="col">Série</th>
                     <th scope="col">Responsável</th>
                     <th scope="col">observação</th>
             </thread>
@@ -19,6 +20,7 @@
                     <th scope="row">{{$s['name']}}</th>
                     <th scope="row">{{$s['tel']}}</th>
                     <th scope="row">{{$s['gender']}}</th>
+                    <th scope="row">{{$s['grade']}}</th>
                     <th scope="row">{{$s['responsible']}}</th>
                     <th scope="row">{{$s['observation']}}</th>
                 </tr>

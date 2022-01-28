@@ -18,6 +18,8 @@ class AdminController extends Controller
         $allKitsCount = Student::all()->count();
         $finishedKitsCount = Student::all()->where('is_kit_done', true)->count();
 
+        $pendingKitsCount = $allKitsCount - $finishedKitsCount;
+
         $schools = School::withCount(['students', 'students as students_with_kit_count' => function(Builder $query){
             $query->where('is_kit_done', true);
         }])->get();
@@ -25,7 +27,7 @@ class AdminController extends Controller
         $maleKitsCount = Student::all()->where('gender', 'masculino')->where('is_kit_done', false)->count();
         $femaleKitsCount = Student::all()->where('gender', 'feminino')->where('is_kit_done', false)->count();
 
-        $allKitsData = [$finishedKitsCount, $allKitsCount];
+        $allKitsData = [$finishedKitsCount, $pendingKitsCount] ;
         $genderKitsData = [$maleKitsCount, $femaleKitsCount];
 
         $schoolKitsData = [];

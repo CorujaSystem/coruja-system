@@ -23,7 +23,7 @@
                         <!-- <p class="col-3">Sexo:</p> -->
                         <label for="gender" class="col-3">Sexo:</label>
                         <select wire:model="gender" name="gender" id="gender" form="addStudent" class="form-select">
-                        <option selected>Escolha uma opção</option>
+                            <option selected>Escolha uma opção</option>
 
                             <option  value="masculino">M</option>
                             <option value="feminino">F</option>
@@ -32,6 +32,21 @@
                         @error('gender') <span class="error">{{ $message }}</span> @enderror
 
                     </div>
+
+                    <div class="d-flex mt-1">
+                        <p class="col-3">Série:</p>
+
+                        <select wire:model="grade" name="grade" id="grade" form="addStudent" class="form-select">
+                            <option selected>Escolha uma opção</option>
+                            <option  value="1º ano">1º ano</option>
+                            <option  value="2º ano">2º ano</option>
+                            <option  value="3º ano">3º ano</option>
+                            <option  value="4º ano">4º ano</option>
+                            <option  value="5º ano">5º ano</option>
+                        </select>
+                        @error('grade') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+
 
                     <div class="d-flex mt-1">
                         <p class="col-3">Responsável:</p>

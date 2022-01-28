@@ -46,6 +46,13 @@
                 </th>
 
                 <th scope="col">
+                    <a data-column="grade" href="#">
+                        Série
+                    </a>
+                </th>
+
+
+                <th scope="col">
                     <a data-column="observation" href="#">
                         Observação
                     </a>
@@ -69,6 +76,7 @@
                 <td scope="row">{{$s->gender}}</td>
                 <td scope="row">{{$s->tel}}</td>
                 <td scope="row">{{$s->responsible}}</td>
+                <td scope="row">{{$s->grade}}</td>
                 <td scope="row">{{$s->observation}}</td>
                 <td scope="row">
                     <form class="d-flex mx-3" action="{{url('/admin/escola/'.$school->id.'/kit/'.$s->id)}}" method="POST">
