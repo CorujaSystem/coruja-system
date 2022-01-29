@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center">
-<div class="modal-dialog">
+    <div class="modal-dialog" style="position: absolute; top: 20%; width: 60vw;">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Cadastre um aluno</h5>
@@ -25,7 +25,7 @@
                         <select wire:model="gender" name="gender" id="gender" form="addStudent" class="form-select">
                             <option selected>Escolha uma opção</option>
 
-                            <option  value="masculino">M</option>
+                            <option value="masculino">M</option>
                             <option value="feminino">F</option>
 
                         </select>
@@ -38,11 +38,11 @@
 
                         <select wire:model="grade" name="grade" id="grade" form="addStudent" class="form-select">
                             <option selected>Escolha uma opção</option>
-                            <option  value="1º ano">1º ano</option>
-                            <option  value="2º ano">2º ano</option>
-                            <option  value="3º ano">3º ano</option>
-                            <option  value="4º ano">4º ano</option>
-                            <option  value="5º ano">5º ano</option>
+                            <option value="1º ano">1º ano</option>
+                            <option value="2º ano">2º ano</option>
+                            <option value="3º ano">3º ano</option>
+                            <option value="4º ano">4º ano</option>
+                            <option value="5º ano">5º ano</option>
                         </select>
                         @error('grade') <span class="error">{{ $message }}</span> @enderror
                     </div>
@@ -71,4 +71,4 @@
             </form>
         </div>
     </div>
-    </div>
+</div>
