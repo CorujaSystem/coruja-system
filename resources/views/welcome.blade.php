@@ -166,7 +166,7 @@
                 },
                 title: {
                     display: true,
-                    text: 'Kits escolares daodos',
+                    text: 'Kits escolares doados',
                     font: {
                         size: 20
                     }
