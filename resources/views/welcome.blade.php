@@ -53,7 +53,7 @@
 </div>
 
 <div class="row">
-    <h2 class="mt-4" style="color:#221E41">Acompanhe nosso alcançe ao longo dos anos</h2>
+    <h2 class="mt-4" style="color:#221E41">Acompanhe nosso alcance ao longo dos anos</h2>
     <div class="d-flex m-auto year-productivity-chart">
         <canvas id="year-productivity" width="680" height="420"></canvas>
     </div>
