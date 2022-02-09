@@ -62,7 +62,7 @@
             @foreach ($schools as $s)
 
             <tr class="clickable-row">
-                <td scope="row">{{$s->id}}</td>
+                <td scope="row">{{$loop->iteration}}</td>
                 <td scope="row">{{$s->name}}</td>
                 <td scope="row">{{$s->tel}}</td>
                 <td scope="row">{{$s->email}}</td>
@@ -82,7 +82,7 @@
                         <i class="fas fa-cog text-dark "></i>
                     </a>
 
-                    <a href="{{url('/admin/remover/'.$s->id)}}"  data-toggle="tooltip" data-placement="top" title="Excluir escola" >
+                    <a href="{{url('/admin/remover/'.$s->id)}}" data-toggle="tooltip" data-placement="top" title="Excluir escola">
                         <i class="fa fa-trash mx-3 text-danger"></i>
                     </a>
 
@@ -107,12 +107,11 @@
                 } else {
                     column.innerHTML = `${column.innerHTML} <i class="fas fa-sort-down"></i>`
                 }
-                column.href=`?sort=${columnKey}&direction=${direction === 'asc' ? 'desc' : 'asc'}`
+                column.href = `?sort=${columnKey}&direction=${direction === 'asc' ? 'desc' : 'asc'}`
             } else {
-                column.href=`?sort=${columnKey}`
+                column.href = `?sort=${columnKey}`
             }
         })
-
     </script>
 </div>
 @endsection
