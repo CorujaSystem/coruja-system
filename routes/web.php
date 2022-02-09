@@ -21,13 +21,13 @@ use Illuminate\Support\Facades\Redirect;
 |
 */
 
-Route::get('/redirect-user', function(Request $request){
+Route::get('/redirect-user', function (Request $request) {
     $user = $request->user();
 
-    if($user->is_admin) {
+    if ($user->is_admin) {
         return Redirect::to('/admin');
     }
-    if($user->school_id) {
+    if ($user->school_id) {
         return Redirect::to('/escola/registrar');
     }
 
@@ -59,7 +59,7 @@ Route::get('/sobre', function () {
     return view('about');
 });
 
-Route::group(['prefix' => 'admin'], function (){
+Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->middleware(['isAdmin']);
     Route::get('/registrar', [AdminController::class, 'register'])->middleware(['isAdmin']);
     Route::post('/registrar/salvar', [AdminController::class, 'insertSchool'])->name('salvar-escola')->middleware(['isAdmin']);
@@ -68,33 +68,33 @@ Route::group(['prefix' => 'admin'], function (){
     Route::post('/editar/{schoolId}/salvar', [AdminController::class, 'saveSchool'])->middleware(['isAdmin']);
 });
 
-Route::prefix('/admin/anos')->group(function() {
+Route::prefix('/admin/anos')->group(function () {
     Route::get('/', [YearProductionController::class, 'index'])->middleware(['isAdmin']);
     Route::post('/registrar', [YearProductionController::class, 'store'])->middleware(['isAdmin']);
     Route::post('/atualizar/{yearProductionId}', [YearProductionController::class, 'update'])->middleware(['isAdmin']);
     Route::get('/remover/{yearProductionId}', [YearProductionController::class, 'remove'])->middleware(['isAdmin']);
 });
 
-Route::prefix('/escola')->group(function (){
+Route::prefix('/escola')->group(function () {
     Route::get('/registrar', StudentForm::class);
 });
 
-Route::prefix('/admin/escola')->group(function (){
+Route::prefix('/admin/escola')->group(function () {
     Route::get('/', [AdminController::class, 'indexSchools'])->middleware(['isAdmin']);
     Route::get('/{schoolId}', [AdminController::class, 'showSchool'])->middleware(['isAdmin']);
-    Route::get('/{schoolId}/registrar', function ($schoolId){
+    Route::get('/{schoolId}/registrar', function ($schoolId) {
         $school = School::find($schoolId);
         return View('student-form', ['school' => $school]);
     })->middleware(['isAdmin']);
 
-    Route::get('/{schoolId}/editar/{studentId}', function ($schoolId, $studentId){
+    Route::get('/{schoolId}/editar/{studentId}', function ($schoolId, $studentId) {
         $school = School::find($schoolId);
         $student = Student::find($studentId);
 
         return View('student-form', ['school' => $school, 'student' => $student]);
     })->middleware(['isAdmin']);
 
-    Route::get('/{schoolId}/remover/{studentId}', function ($schoolId, $studentId){
+    Route::get('/{schoolId}/remover/{studentId}', function ($schoolId, $studentId) {
         $student = Student::find($studentId);
         $student->delete();
 
@@ -144,10 +144,10 @@ Route::prefix('/admin/escola')->group(function (){
         return redirect('/admin/escola/' . $schoolId);
     })->middleware(['isAdmin']);
 
-    Route::post('/{schoolId}/kit/{studentId}', function(Request $request, $schoolId, $studentId){
+    Route::post('/{schoolId}/kit/{studentId}', function (Request $request, $schoolId, $studentId) {
         $kitDone = $request->post('kit');
         $student = Student::find($studentId);
-        $student->is_kit_done = $kitDone ? 'true' : 'false';
+        $student->is_kit_done = $kitDone ? 1 : 0;
         $student->save();
         return Redirect::back();
     })->middleware(['isAdmin']);
