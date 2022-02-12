@@ -16,7 +16,7 @@ class Student extends Model
     protected $dates = ['deleted_at'];
 
     public function school(){
-        return $this->belongsTo(School::class)->withTrashed();
+        return $this->belongsTo(School::class);
     }
 
 }

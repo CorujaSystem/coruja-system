@@ -17,7 +17,7 @@ class School extends Model
 
     public function students()
     {
-        return $this->hasMany(Student::class)->withTrashed();
+        return $this->hasMany(Student::class);
     }
 
     public function user()
