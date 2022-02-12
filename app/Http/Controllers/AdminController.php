@@ -89,9 +89,8 @@ class AdminController extends Controller
     }
     public function remove($schoolId)
     {
-        $school = School::find($schoolId);
-        $school->deleted_at = now();
-        $school->save();
+        $school = School::find($schoolId);  
+        $school->delete();
         return Redirect::back();
     }
     public function insertSchool(Request $request)
