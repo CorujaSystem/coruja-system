@@ -10,10 +10,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class School extends Model
 {
     use SoftDeletes;
+    use HasFactory;
+
+    protected $guarded = [];
+    protected $dates = ['deleted_at'];
 
     public function students()
     {
-        return $this->hasMany(Student::class);
+        return $this->hasMany(Student::class)->withTrashed();
     }
 
     public function user()
@@ -21,7 +25,13 @@ class School extends Model
         return $this->hasOne(User::class);
     }
 
-    use HasFactory;
+    protected static function boot(){
+        parent::boot();
 
-    protected $guarded = [];
+        static::deleted(function ($school){
+            $school->students->each(function ($student) {
+                $student->delete();
+            });
+        });
+    }
 }

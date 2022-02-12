@@ -4,15 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
 
-    public function school(){
-        return $this->belongsTo(School::class);
-    }
-
+    use SoftDeletes;
     use HasFactory;
 
     protected $guarded = [];  
+    protected $dates = ['deleted_at'];
+
+    public function school(){
+        return $this->belongsTo(School::class)->withTrashed();
+    }
+
 }
