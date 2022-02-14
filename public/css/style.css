@@ -1,3 +1,72 @@
-body{color:#221e41;display:flex;flex-direction:column;font-family:Ubuntu,sans-serif;font-weight:400;margin:0;position:relative}.year-productivity-chart{width:90%!important}@media (min-width:768px){.year-productivity-chart{width:50%!important}}.navbar{background:#f9bcdf;height:48px;justify-content:space-between;width:100%}.navbar,.navbar__items{align-items:center;display:flex}.navbar__items{justify-content:space-around;margin-left:10%;width:50%}@media screen and (max-width:333px){.linked{display:none}}.navbar__items--link{color:#000;text-decoration:none}.navbar__button{margin-right:5px}.btn-contato{background-color:#fff;border-radius:12px;border-style:none;color:#000;height:36px;max-width:100%}.btn-contato:hover{cursor:pointer}.btn-contribua{background-color:#cf7dad;border-radius:12px;border-style:none;color:#fff;font-size:large;height:50px;margin-top:20px;width:150px}
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #221e41;
+  font-family: Ubuntu, sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
 
-/*# sourceMappingURL=style.css.map*/
+.year-productivity-chart {
+  width: 90% !important;
+}
+@media (min-width: 768px) {
+  .year-productivity-chart {
+    width: 50% !important;
+  }
+}
+
+.navbar {
+  background: #f9bcdf;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 10%;
+  width: 50%;
+}
+
+@media screen and (max-width: 333px) {
+  .linked {
+    display: none;
+  }
+}
+.navbar__items--link {
+  color: black;
+  text-decoration: none;
+}
+
+.navbar__button {
+  margin-right: 5px;
+}
+
+.btn-contato {
+  max-width: 100%;
+  height: 36px;
+  border-radius: 12px;
+  border-style: none;
+  background-color: #ffffff;
+  color: black;
+}
+.btn-contato:hover {
+  cursor: pointer;
+}
+
+.btn-contribua {
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 12px;
+  border-style: none;
+  background-color: #cf7dad;
+  color: white;
+  font-size: large;
+}
